@@ -96,7 +96,7 @@ main.animetab {
     margin: 2em;
     text-align: left;
 }
-main.animetab div.animetabdiv {
+main.animetab section.animetab {
     margin-top: 3em;
 }
 main.animetab h1.animetab {
@@ -138,4 +138,139 @@ main.animetab a.animetab:hover {
     cursor: pointer;
     color: aquamarine;
     font-size: xx-large;
+}
+
+main.mangatab {
+    margin: 2em;
+    text-align: left;
+}
+main.mangatab section.mangatab {
+    margin-top: 3em;
+}
+main.mangatab h1.mangatab {
+    width: fit-content;
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(65, 246, 33, 0.621);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    margin-bottom: 10px;
+    transition: font-size 3s, color 3s;
+}
+main.mangatab h1.mangatab:hover {
+    font-size: 50px;
+    color: rgb(65, 246, 33);
+    cursor: pointer;
+}
+main.mangatab h3.mangatab{
+    width: 30em;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+main.mangatab a.mangatab {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(37, 176, 245);
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: none;
+    outline: none;
+    transition: color 1s, font-size 1s;
+}
+main.mangatab a.mangatab:hover {
+    cursor: pointer;
+    color: aquamarine;
+    font-size: xx-large;
+}
+
+main.abouttab {
+    margin: 2em;
+    text-align: left;
+}
+main.abouttab section.abouttab {
+    margin-top: 3em;
+}
+main.abouttab section.abouttab img.abouttab.logo {
+    width: 15em;
+    height: 15em;
+    margin-right: 2em;
+    float: left;
+    transition: transform 2s;
+}
+main.abouttab section.abouttab img.abouttab.logo:hover {
+    transform: rotate(360deg);
+}
+main.abouttab h1.abouttab {
+    width: fit-content;
+    font-size: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    color: tomato;
+    margin: 10px 400px 5px 0px;
+    transition: color 3s;
+    float: left;
+}
+main.abouttab h1.abouttab:hover {
+    color: wheat;
+    cursor: none;
+}
+main.abouttab h3.abouttab{
+    width: 40em;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(255, 224, 224);
+}
+main.abouttab section.abouttab.founder {
+    box-sizing: border-box;
+    width: 70em;
+    text-align: center;
+    padding: 1em;
+    margin: 5em auto 0px auto;
+}
+main.abouttab section.abouttab.founder img.abouttab.founder {
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+    margin: 1em 0em 1em 0em;
+    align-self: center;
+    transition: width 2s, height 2s, transform 2s;
+}
+main.abouttab section.abouttab.founder img.abouttab.founder:hover {
+    width: 40em;
+    height: 40em;
+    transform: rotate(360deg);
+}
+main.abouttab section.abouttab.founder h1.abouttab.founder {
+    width: fit-content;
+    font-size: 60px;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255, 197, 71);
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    margin: 0em 5em 0em 7em;
+}
+main.abouttab section.abouttab.founder h1.abouttab.founder:hover {
+    cursor: default;
+}
+main.abouttab section.abouttab.founder div.abouttab.founder {
+    margin: 0.5em 6em 2em 22em;
+}
+
+main.abouttab section.abouttab.founder div.abouttab.founder h1.abouttab.foundername {
+    font-size: 50px;
+    font-family: 'Times New Roman', serif;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    color: rgb(71, 148, 255);
+    margin: 0px 0px 50px 0px;
+    transition: color 0.5s, font-size 0.5s, transform 0.5s;
+}
+main.abouttab section.abouttab.founder div.abouttab.founder h1.abouttab.foundername:hover {
+    color: aquamarine;
+    transform: rotate(36deg);
+    cursor: default;
 }
