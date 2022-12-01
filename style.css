@@ -91,3 +91,51 @@ main.hometab h3.hometab button.hometab:hover {
     color: rgba(63, 199, 56, 0.709);
     cursor: pointer;
 }
+
+main.animetab {
+    margin: 2em;
+    text-align: left;
+}
+main.animetab div.animetabdiv {
+    margin-top: 3em;
+}
+main.animetab h1.animetab {
+    width: fit-content;
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(65, 246, 33, 0.621);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    margin-bottom: 10px;
+    transition: font-size 3s, color 3s;
+}
+main.animetab h1.animetab:hover {
+    font-size: 50px;
+    color: rgb(65, 246, 33);
+    cursor: pointer;
+}
+main.animetab h3.animetab{
+    width: 30em;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+main.animetab ol.animetab {
+    list-style-type: none;
+}
+main.animetab a.animetab {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(37, 176, 245);
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: none;
+    outline: none;
+    transition: color 1s, font-size 1s;
+}
+main.animetab a.animetab:hover {
+    cursor: pointer;
+    color: aquamarine;
+    font-size: xx-large;
+}
