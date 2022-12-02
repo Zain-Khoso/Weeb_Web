@@ -23,19 +23,7 @@ function eventHandler(node) {
             break;
 
         case "Sign-up":
-            document.body.innerHTML = `
-            <header>
-                <nav>
-                    <img src="assets/imgs/logo.png" alt="Logo" />
-                    <h2>Weeb Web</h2>
-                    <button class="navbtn">Sign-up</button>
-                    <button class="navbtn">About_Us</button>
-                    <button class="navbtn">Manga</button>
-                    <button class="navbtn">Anime</button>
-                    <button class="navbtn">Home</button>
-                </nav>
-            </header>
-            `;
+            document.body.innerHTML = new docStrucGenerator().signup
             eventDetector();
             break;
     }
@@ -219,7 +207,75 @@ function docStrucGenerator() {
         </section>
     </main>
     
-    `
+    `;
+
+    this.signup = `
+    <header>
+        <nav>
+            <img src="assets/imgs/logo.png" alt="Logo" />
+            <h2>Weeb Web</h2>
+            <button class="navbtn">Sign-up</button>
+            <button class="navbtn">About_Us</button>
+            <button class="navbtn">Manga</button>
+            <button class="navbtn">Anime</button>
+            <button class="navbtn">Home</button>
+        </nav>
+    </header>
+    <main class="signup">
+        <form action="" method="get" class="signup">
+            <div class="signup">
+                <label for="email">Email: </label>
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Gmail, etc" />
+            </div>
+            <div class="signup">
+                <label>
+                    Gender:
+                    <label for="male">Male </label>
+                    <input type="radio" name="gender" id="male" />
+                    <label for="female">Female </label>
+                    <input type="radio" name="gender" id="female" />
+                </label>
+            </div>
+            <div class="signup">
+                <label>
+                    Name:
+                    <input
+                        type="text"
+                        name="fname"
+                        placeholder="First Name" />
+                    <input
+                        type="text"
+                        name="lname"
+                        placeholder="Last Name" />
+                </label>
+            </div>
+            <div class="signup main">
+                <label for="username">Username: </label>
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Username"
+                    required /> <br>
+                <label for="password">Password: </label>
+                <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Password"
+                    required />
+            </div>
+            <div class="signup btndiv">
+                <button type="reset" class="signupbtn reset">Fill Again</button>
+                <button type="submit" class="signupbtn submit">SignUp</button>
+            </div>
+        </form>
+    </main>
+    `;
 }
 
 function eventDetector() {
