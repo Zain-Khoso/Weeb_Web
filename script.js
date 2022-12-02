@@ -1,35 +1,58 @@
-eventDetector();
-
-function eventHandler(node) {
+function tabChanger(node) {
     switch (node.textContent) {
         case "Home":
-            document.body.innerHTML = new docStrucGenerator().home
+            document.body.innerHTML = new innerHTMLGenerator().home;
             eventDetector();
             break;
 
         case "Anime":
-            document.body.innerHTML = new docStrucGenerator().anime
+            document.body.innerHTML = new innerHTMLGenerator().anime;
             eventDetector();
             break;
 
         case "Manga":
-            document.body.innerHTML = new docStrucGenerator().manga
+            document.body.innerHTML = new innerHTMLGenerator().manga;
             eventDetector();
             break;
 
         case "About_Us":
-            document.body.innerHTML = new docStrucGenerator().about
+            document.body.innerHTML = new innerHTMLGenerator().about;
             eventDetector();
             break;
 
         case "Sign-up":
-            document.body.innerHTML = new docStrucGenerator().signup
+            document.body.innerHTML = new innerHTMLGenerator().signup;
             eventDetector();
             break;
     }
 }
 
-function docStrucGenerator() {
+function anitabeventhadler(node) {
+    switch (node.textContent) {
+        case "Anime Quotes":
+            async function quotegen() {
+                try {
+                    let data = await (
+                        await fetch("https://animchan.vercel.app/api/random")
+                    ).json();
+                    let response = `"${data.quote}". ~~ ${data.character} ~~ from, ${data.anime}.`;
+                    document.querySelector("h3#animequote").textContent =
+                        response;
+                } catch (error) {
+                    document.querySelector("h3#animequote").textContent =
+                        "Unable to fetch a quote, try again. '.'";
+                }
+            }
+            
+            quotegen();
+            break;
+        case "Popular Animes.":
+            console.log(node.textContent);
+            break;
+    }
+}
+
+function innerHTMLGenerator() {
     this.home = `
     <header>
         <nav>
@@ -58,11 +81,9 @@ function docStrucGenerator() {
             On this site you'll find, Where to Watch Anime, Where to Read
             Manga, Memes(about Anime & Manga), More Weebs like your self,
             Anime & Manga Discussions, Anime & Manga Suggestions. And Much
-            More. May you have a good time with us. You Can find Anime
-            related content
-            <button class="navbtn hometab"><i>Here</i></button>. Manga
-            related content
-            <button class="navbtn hometab"><i>Here</i></button>.
+            More. May you have a good time with us. Find more about
+            <button class="navbtn hometab"><i>Anime</i></button> and 
+            <button class="navbtn hometab"><i>Manga</i></button>.
         </h3>
     </main>
     `;
@@ -116,13 +137,13 @@ function docStrucGenerator() {
             </ol>
         </section>
         <section class="animetab">
-            <h1 class="animetab" id="animequots">Anime Quotes</h1>
-            <h3 class="animetab">
+            <button class="animetab animetabbtns" id="animequots">Anime Quotes</button>
+            <h3 class="animetab" id="animequote">
                 Click on the header to view Anime Quotes.
             </h3>
         </section>
         <section class="animetab">
-            <h1 class="animetab" id="animenews">Popular Animes.</h1>
+            <button class="animetab animetabbtns" id="animenews">Popular Animes.</button>
             <h3 class="animetab">
                 Click on the header to view Animes List.
             </h3>
@@ -279,8 +300,13 @@ function docStrucGenerator() {
 }
 
 function eventDetector() {
-    let navBtns = document.querySelectorAll(".navbtn");
-    navBtns.forEach((elem) =>
-        elem.addEventListener("click", () => eventHandler(elem))
-    );
+    document.querySelectorAll(".navbtn").forEach((elem) => {
+        elem.addEventListener("click", () => tabChanger(elem));
+    });
+
+    document.querySelectorAll(".animetabbtns").forEach((elem) => {
+        elem.addEventListener("click", () => anitabeventhadler(elem));
+    });
 }
+
+eventDetector();
