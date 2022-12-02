@@ -26,7 +26,7 @@ function eventHandler(node) {
             document.body.innerHTML = `
             <header>
                 <nav>
-                    <img src="assets/logo.png" alt="Logo" />
+                    <img src="assets/imgs/logo.png" alt="Logo" />
                     <h2>Weeb Web</h2>
                     <button class="navbtn">Sign-up</button>
                     <button class="navbtn">About_Us</button>
@@ -45,7 +45,7 @@ function docStrucGenerator() {
     this.home = `
     <header>
         <nav>
-            <img src="assets/logo.png" alt="Logo" />
+            <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
             <button class="navbtn">Sign-up</button>
             <button class="navbtn">About_Us</button>
@@ -82,7 +82,7 @@ function docStrucGenerator() {
     this.anime = `
     <header>
         <nav>
-            <img src="assets/logo.png" alt="Logo" />
+            <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
             <button class="navbtn">Sign-up</button>
             <button class="navbtn">About_Us</button>
@@ -145,7 +145,7 @@ function docStrucGenerator() {
     this.manga = `
     <header>
         <nav>
-            <img src="assets/logo.png" alt="Logo" />
+            <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
             <button class="navbtn">Sign-up</button>
             <button class="navbtn">About_Us</button>
@@ -181,7 +181,7 @@ function docStrucGenerator() {
     this.about = `
     <header>
         <nav>
-            <img src="assets/logo.png" alt="Logo" />
+            <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
             <button class="navbtn">Sign-up</button>
             <button class="navbtn">About_Us</button>
@@ -192,12 +192,12 @@ function docStrucGenerator() {
     </header>
     <main class="abouttab">
         <section class="abouttab">
-            <img src="/assets/logo.png" alt="Logo" class="abouttab logo">
+            <img src="/assets/imgs/logo.png" alt="Logo" class="abouttab logo">
             <h1 class="abouttab">Weeb Web</h1>
             <h3 class="abouttab">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam doloribus inventore nisi quia quo facilis iste voluptates in quidem, repudiandae nobis cumque harum eligendi, excepturi, earum iusto magni libero cum repellat veritatis odit. Quaerat voluptas distinctio ipsam. Illo repellat cumque eos officia distinctio temporibus explicabo ab facere repudiandae sapiente numquam quae asperiores provident, iure voluptas doloribus expedita, atque nesciunt assumenda! Voluptatibus facere dolores culpa nobis recusandae quo saepe hic doloribus cum quibusdam. Iusto natus optio veritatis ea non, fugiat maxime praesentium voluptatem nesciunt odit tenetur voluptate repellendus eos aliquid velit mollitia sit atque vel, eaque voluptatibus incidunt? Quis sunt id quia tempora numquam unde repellat nostrum impedit. Aliquam veritatis ut ad sint autem dolorum iure, fugit iste asperiores accusamus illo quos quia ipsa hic, nesciunt tempore quo ea eos accusantium nisi excepturi facere placeat? Sint rerum esse aspernatur laborum temporibus laboriosam, corrupti impedit? Ipsum nostrum rerum fugit expedita dolores facere nisi dolorem odit reprehenderit, cupiditate quibusdam iusto omnis doloremque nemo, ut sunt eaque rem porro corrupti hic adipisci neque maiores placeat. Facere officiis et quam perferendis vel dicta neque soluta exercitationem nemo, sed esse repudiandae molestiae magnam quisquam impedit. Pariatur, tempore? Vero iure maxime suscipit voluptas quas explicabo excepturi, delectus adipisci nemo odit mollitia ducimus iste facilis perferendis rem. Delectus, incidunt autem facilis minima quis consequatur, voluptatibus et voluptatem asperiores ratione deserunt. Placeat ex inventore corrupti dolorem! Ad ipsum delectus eligendi eum libero vitae voluptate iure repudiandae voluptatem molestias labore fugit, in magni. Nisi commodi debitis ratione, beatae, doloremque vero necessitatibus enim obcaecati magni eaque accusantium hic soluta odit optio non minima provident perferendis sunt. In exercitationem, quam dolore repellat itaque assumenda quis velit enim neque beatae asperiores voluptatibus harum, autem aliquid fuga? Est maxime incidunt dolor odit esse voluptatibus quae eaque. Laboriosam sapiente, consequuntur iure aliquam incidunt magni animi?</h3>
         </section>
         <section class="abouttab founder">
-            <img src="/assets/owner.png" alt="" class="abouttab founder">
+            <img src="/assets/imgs/owner.png" alt="" class="abouttab founder">
             
             <h1 class="abouttab founder">Founder</h1>
             
