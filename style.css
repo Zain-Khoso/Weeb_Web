@@ -138,6 +138,34 @@ main.animetab h3.animetab{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
 }
+main.animetab h3.popularAnimeList {
+    width: 40em;
+    height: fit-content;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+main.animetab h3.popularAnimeList button.animetab {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(21, 255, 142, 0.581);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+main.animetab h3.popularAnimeList button.animetab h1.animetab {
+    width: fit-content;
+    font-size: 20px;
+    font-family: Georgia, Times, 'Times New Roman';
+    color: rgb(255, 255, 255);
+    background-color: rgba(21, 255, 142, 0);
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 1em;
+    margin: 2px;
+}
 main.animetab ol.animetab {
     list-style-type: none;
 }

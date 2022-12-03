@@ -27,28 +27,33 @@ function tabChanger(node) {
     }
 }
 
-function anitabeventhadler(node) {
-    switch (node.textContent) {
-        case "Anime Quotes":
-            async function quotegen() {
-                try {
-                    let data = await (
-                        await fetch("https://animchan.vercel.app/api/random")
-                    ).json();
-                    let response = `"${data.quote}". ~~ ${data.character} ~~ from, ${data.anime}.`;
-                    document.querySelector("h3#animequote").textContent =
-                        response;
-                } catch (error) {
-                    document.querySelector("h3#animequote").textContent =
-                        "Unable to fetch a quote, try again. '.'";
-                }
-            }
-            
-            quotegen();
-            break;
-        case "Popular Animes.":
-            console.log(node.textContent);
-            break;
+async function quotegen() {
+    try {
+        let data = await (
+            await fetch("https://animechan.vercel.app/api/random")
+        ).json();
+        let response = `"${data.quote}". ~~ ${data.character} ~~ from, ${data.anime}.`;
+        document.querySelector("h3#animequote").textContent = response;
+    } catch (error) {
+        document.querySelector("h3#animequote").textContent =
+            "Unable to fetch a quote, try again. '.'";
+    }
+}
+
+async function pAniManGenerator() {
+    try {
+        let animes = await (await fetch("/assets/data/animes.json")).json();
+        let mangas = await (await fetch("/assets/data/mangas.json")).json();
+        for (let anime of animes) {
+            let container = new innerHTMLGenerator().pAniManHead(
+                "animetab",
+                anime.name,
+                anime.episode
+            );
+            document.querySelector('.popularAnimeList').appendChild(container)
+        }
+    } catch (error) {
+        return;
     }
 }
 
@@ -137,15 +142,13 @@ function innerHTMLGenerator() {
             </ol>
         </section>
         <section class="animetab">
+            <h1 class="animetab" id="popularAnimes">Popular Animes.</h1>
+            <h3 class="animetab popularAnimeList"></h3>
+        </section>
+        <section class="animetab">
             <button class="animetab animetabbtns" id="animequots">Anime Quotes</button>
             <h3 class="animetab" id="animequote">
                 Click on the header to view Anime Quotes.
-            </h3>
-        </section>
-        <section class="animetab">
-            <button class="animetab animetabbtns" id="animenews">Popular Animes.</button>
-            <h3 class="animetab">
-                Click on the header to view Animes List.
             </h3>
         </section>
     </main>
@@ -178,10 +181,8 @@ function innerHTMLGenerator() {
             </h3>
         </section>
         <section class="mangatab">
-            <h1 class="mangatab" id="manganews">Popular Mangas.</h1>
-            <h3 class="mangatab">
-                Click on the header to view Manga List.
-            </h3>
+            <h1 class="mangatab" id="popularMangas">Popular Mangas.</h1>
+            <h3 class="mangatab popularMangaList"></h3>
         </section>
     </main>
     
@@ -297,6 +298,16 @@ function innerHTMLGenerator() {
         </form>
     </main>
     `;
+
+    this.pAniManHead = function (tab, name, eps) {
+        let container = document.createElement("button");
+        container.className = tab;
+        container.innerHTML = `
+            <h1 class="${tab}">${name}, </h1>
+            <h1 class="${tab}">${eps} Episodes</h1>
+        `;
+        return container;
+    };
 }
 
 function eventDetector() {
@@ -305,8 +316,11 @@ function eventDetector() {
     });
 
     document.querySelectorAll(".animetabbtns").forEach((elem) => {
-        elem.addEventListener("click", () => anitabeventhadler(elem));
+        elem.addEventListener("click", quotegen);
     });
+
+    pAniManGenerator()
 }
 
 eventDetector();
+pAniManGenerator();
