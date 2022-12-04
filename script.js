@@ -1,4 +1,4 @@
-function tabChanger(node) {
+async function tabChanger(node) {
     switch (node.textContent) {
         case "Home":
             document.body.innerHTML = new innerHTMLGenerator().home;
@@ -7,11 +7,13 @@ function tabChanger(node) {
 
         case "Anime":
             document.body.innerHTML = new innerHTMLGenerator().anime;
+            await pAniManGenerator(node.textContent);
             eventDetector();
             break;
 
         case "Manga":
             document.body.innerHTML = new innerHTMLGenerator().manga;
+            await pAniManGenerator(node.textContent);
             eventDetector();
             break;
 
@@ -40,18 +42,66 @@ async function quotegen() {
     }
 }
 
-async function pAniManGenerator() {
+async function pAniManGenerator(node) {
     try {
-        let animes = await (await fetch("/assets/data/animes.json")).json();
-        let mangas = await (await fetch("/assets/data/mangas.json")).json();
-        for (let anime of animes) {
-            let container = new innerHTMLGenerator().pAniManHead(
-                "animetab",
-                anime.name,
-                anime.episode
-            );
-            document.querySelector('.popularAnimeList').appendChild(container)
+        if (node == "Anime") {
+            let animes = await (await fetch("/assets/data/animes.json")).json();
+            for (let anime of animes) {
+                let container = new innerHTMLGenerator().pAniManHead(
+                    "animetab",
+                    anime.name,
+                    `${anime.episode} Episodes`
+                );
+                document
+                    .querySelector(".popularAnimeList")
+                    .appendChild(container);
+            }
+        } else if (node == "Manga") {
+            let mangas = await (await fetch("/assets/data/mangas.json")).json();
+            for (let manga of mangas) {
+                let container = new innerHTMLGenerator().pAniManHead(
+                    "mangatab",
+                    manga.name,
+                    `${manga.volumes} Volumes`
+                );
+                document
+                    .querySelector(".popularMangaList")
+                    .appendChild(container);
+            }
         }
+    } catch (error) {
+        return;
+    }
+}
+
+async function contextCard(node) {
+    let tab = Array.from(node.classList)[0];
+    let contentName = node.firstElementChild.textContent.replace(", ", "");
+    let contextData;
+    let contextNode;
+    try {
+        if (tab == "animetab") {
+            let data = await (await fetch("/assets/data/animes.json")).json();
+            contextData = data.find((elem) => elem["name"] == contentName);
+            contextNode = new innerHTMLGenerator().pAniManContext(
+                'Anime Details',
+                contentName,
+                `Episodes: ${contextData.episode}`,
+                contextData.img,
+                contextData.description
+            );
+        } else if (tab == "mangatab") {
+            let data = await (await fetch("/assets/data/mangas.json")).json();
+            contextData = data.find((elem) => elem["name"] == contentName);
+            contextNode = new innerHTMLGenerator().pAniManContext(
+                'Manga Details',
+                contentName,
+                `Volumes: ${contextData.volumes}`,
+                contextData.img,
+                contextData.description
+            );
+        }
+        document.body.appendChild(contextNode);
     } catch (error) {
         return;
     }
@@ -301,10 +351,29 @@ function innerHTMLGenerator() {
 
     this.pAniManHead = function (tab, name, eps) {
         let container = document.createElement("button");
-        container.className = tab;
+        container.classList = `${tab} pAniManBtn`;
         container.innerHTML = `
             <h1 class="${tab}">${name}, </h1>
-            <h1 class="${tab}">${eps} Episodes</h1>
+            <h1 class="${tab}">${eps}</h1>
+        `;
+        return container;
+    };
+
+    this.pAniManContext = function (header, name, length, imgsrc, summary) {
+        let container = document.createElement("div");
+        container.id = "pAniManContextWin";
+        container.innerHTML = `
+        <div id="head">
+            <h1>${header}</h1>
+            <button onclick="this.parentElement.parentElement.remove()">X</button>
+        </div>
+        <div id="body">
+            <img src="${imgsrc}">
+            <h1>${name}</h1>
+            <h2>${length}</h2>
+            <h3>Description:</h3>
+            <h4>${summary}</h4>
+        </div>
         `;
         return container;
     };
@@ -319,8 +388,9 @@ function eventDetector() {
         elem.addEventListener("click", quotegen);
     });
 
-    pAniManGenerator()
+    document.querySelectorAll(".pAniManBtn").forEach((elem) => {
+        elem.addEventListener("click", () => contextCard(elem));
+    });
 }
 
 eventDetector();
-pAniManGenerator();
