@@ -353,9 +353,9 @@ main.signup {
     margin: 2em;
     text-align: left;
 }
-main.signup form.signup {
+main.signup div.form {
     box-sizing: border-box;
-    width: fit-content;
+    width: 20em;
     height: fit-content;
     background-color: cadetblue;
     font-size: x-large;
@@ -367,37 +367,37 @@ main.signup form.signup {
     margin: 0px auto 0px auto;
     overflow: hidden;
 }
-main.signup form.signup div.signup {
+main.signup div.form div.signup {
     margin: 10px;
 }
-main.signup form.signup div.main {
+main.signup div.form div.main {
     padding-top: 0.5em;
     border-top: 1px solid black;
     margin-top: 1em;
 }
-main.signup form.signup div.signup input {
+main.signup div.form div.signup input {
     width: 100px;
     font-size: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     outline: none;
     border: none;
 }
-main.signup form.signup div.signup input#email {
+main.signup div.form div.signup input#email {
     width: 210px;
 }
-main.signup form.signup div.signup input#male {
+main.signup div.form div.signup input#male {
     width: fit-content;
     margin-right: 5px;
 }
-main.signup form.signup div.signup input#female {
+main.signup div.form div.signup input#female {
     width: fit-content;
 }
-main.signup form.signup div.btndiv {
+main.signup div.form div.btndiv {
     margin-top: 1em;
     display: flex;
     justify-content: space-evenly;
 }
-main.signup form.signup div.btndiv button {
+main.signup div.form div.btndiv button {
     width: 6rem;
     height: 2rem;
     font-size: 1rem;
@@ -419,6 +419,7 @@ div#pAniManContextWin {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 500px rgb(0, 0, 0);
     overflow: hidden;
 }
 div#pAniManContextWin div#head {

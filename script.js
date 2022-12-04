@@ -84,7 +84,7 @@ async function contextCard(node) {
             let data = await (await fetch("/assets/data/animes.json")).json();
             contextData = data.find((elem) => elem["name"] == contentName);
             contextNode = new innerHTMLGenerator().pAniManContext(
-                'Anime Details',
+                "Anime Details",
                 contentName,
                 `Episodes: ${contextData.episode}`,
                 contextData.img,
@@ -94,7 +94,7 @@ async function contextCard(node) {
             let data = await (await fetch("/assets/data/mangas.json")).json();
             contextData = data.find((elem) => elem["name"] == contentName);
             contextNode = new innerHTMLGenerator().pAniManContext(
-                'Manga Details',
+                "Manga Details",
                 contentName,
                 `Volumes: ${contextData.volumes}`,
                 contextData.img,
@@ -105,6 +105,65 @@ async function contextCard(node) {
     } catch (error) {
         return;
     }
+}
+
+function signup() {
+    let gusername = document.getElementById("username").value.trim();
+    let gpassword = document.getElementById("password").value.trim();
+
+    if (gusername == "" || gpassword == "") return;
+
+    if (
+        localStorage.getItem("username") === null ||
+        localStorage.getItem("password") === null
+    ) {
+        localStorage.setItem("username", gusername);
+        localStorage.setItem("password", gpassword);
+        let msg = document.createElement("h6");
+        msg.style = `
+        font-size: xx-large;
+        `;
+        msg.textContent = "Successfully Signed-In";
+
+        document.getElementById("form").appendChild(msg);
+    } else {
+        let susername = localStorage.getItem("username");
+        let spassword = localStorage.getItem("password");
+
+        if (gusername == susername && gpassword == spassword) {
+            let msg = document.createElement("h6");
+            msg.style = `
+                font-size: xx-large;
+            `;
+            msg.textContent = "Successfully Signed-In";
+            document.getElementById("form").appendChild(msg);
+            setTimeout(() => {
+                document.body.innerHTML = new innerHTMLGenerator().home;
+                eventDetector();
+            }, 2000);
+        } else {
+            let container = document.createElement("div");
+            container.innerHTML = `
+            <h6 style="font-size:xx-large;">
+                Incorrect username or Password, click on the button bellow to reset it.
+            </h6>
+            <button onclick="resetudata(this)" style="background-color:red;">Reset</button>
+            `;
+            document.getElementById("form").appendChild(container);
+        }
+    }
+}
+
+function resetudata(node) {
+    localStorage.setItem("username", document.getElementById("username").value);
+    localStorage.setItem("password", document.getElementById("password").value);
+
+    node.parentElement.remove();
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+
+    document.body.innerHTML = new innerHTMLGenerator().home;
+    eventDetector();
 }
 
 function innerHTMLGenerator() {
@@ -294,24 +353,7 @@ function innerHTMLGenerator() {
         </nav>
     </header>
     <main class="signup">
-        <form action="" method="get" class="signup">
-            <div class="signup">
-                <label for="email">Email: </label>
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Gmail, etc" />
-            </div>
-            <div class="signup">
-                <label>
-                    Gender:
-                    <label for="male">Male </label>
-                    <input type="radio" name="gender" id="male" />
-                    <label for="female">Female </label>
-                    <input type="radio" name="gender" id="female" />
-                </label>
-            </div>
+        <div class="signup form" id="form">
             <div class="signup">
                 <label>
                     Name:
@@ -323,6 +365,15 @@ function innerHTMLGenerator() {
                         type="text"
                         name="lname"
                         placeholder="Last Name" />
+                </label>
+            </div>
+            <div class="signup">
+                <label>
+                    Gender:
+                    <label for="male">Male </label>
+                    <input type="radio" name="gender" id="male" />
+                    <label for="female">Female </label>
+                    <input type="radio" name="gender" id="female" />
                 </label>
             </div>
             <div class="signup main">
@@ -341,11 +392,10 @@ function innerHTMLGenerator() {
                     placeholder="Password"
                     required />
             </div>
-            <div class="signup btndiv">
-                <button type="reset" class="signupbtn reset">Fill Again</button>
-                <button type="submit" class="signupbtn submit">SignUp</button>
+            <div class="signup btndiv" id="btndiv">
+                <button class="signupbtn submit" onclick="signup()">SignUp</button>
             </div>
-        </form>
+        </div>
     </main>
     `;
 
