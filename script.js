@@ -172,11 +172,18 @@ function innerHTMLGenerator() {
         <nav>
             <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
-            <button class="navbtn">Sign-up</button>
-            <button class="navbtn">About_Us</button>
-            <button class="navbtn">Manga</button>
-            <button class="navbtn">Anime</button>
-            <button class="navbtn">Home</button>
+            <div class="navbtns">
+                <button class="navbtn">Sign-up</button>
+                <button class="navbtn">About_Us</button>
+                <button class="navbtn">Manga</button>
+                <button class="navbtn">Anime</button>
+                <button class="navbtn">Home</button>
+            </div>
+            <button id="navmenu">
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+            </button>
         </nav>
     </header>
     <main class="hometab">
@@ -207,11 +214,18 @@ function innerHTMLGenerator() {
         <nav>
             <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
-            <button class="navbtn">Sign-up</button>
-            <button class="navbtn">About_Us</button>
-            <button class="navbtn">Manga</button>
-            <button class="navbtn">Anime</button>
-            <button class="navbtn">Home</button>
+            <div class="navbtns">
+                <button class="navbtn">Sign-up</button>
+                <button class="navbtn">About_Us</button>
+                <button class="navbtn">Manga</button>
+                <button class="navbtn">Anime</button>
+                <button class="navbtn">Home</button>
+            </div>
+            <button id="navmenu">
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+            </button>
         </nav>
     </header>
     <main class="animetab">
@@ -268,11 +282,18 @@ function innerHTMLGenerator() {
         <nav>
             <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
-            <button class="navbtn">Sign-up</button>
-            <button class="navbtn">About_Us</button>
-            <button class="navbtn">Manga</button>
-            <button class="navbtn">Anime</button>
-            <button class="navbtn">Home</button>
+            <div class="navbtns">
+                <button class="navbtn">Sign-up</button>
+                <button class="navbtn">About_Us</button>
+                <button class="navbtn">Manga</button>
+                <button class="navbtn">Anime</button>
+                <button class="navbtn">Home</button>
+            </div>
+            <button id="navmenu">
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+            </button>
         </nav>
     </header>
     <main class="mangatab">
@@ -302,11 +323,18 @@ function innerHTMLGenerator() {
         <nav>
             <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
-            <button class="navbtn">Sign-up</button>
-            <button class="navbtn">About_Us</button>
-            <button class="navbtn">Manga</button>
-            <button class="navbtn">Anime</button>
-            <button class="navbtn">Home</button>
+            <div class="navbtns">
+                <button class="navbtn">Sign-up</button>
+                <button class="navbtn">About_Us</button>
+                <button class="navbtn">Manga</button>
+                <button class="navbtn">Anime</button>
+                <button class="navbtn">Home</button>
+            </div>
+            <button id="navmenu">
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+            </button>
         </nav>
     </header>
     <main class="abouttab">
@@ -345,11 +373,18 @@ function innerHTMLGenerator() {
         <nav>
             <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
-            <button class="navbtn">Sign-up</button>
-            <button class="navbtn">About_Us</button>
-            <button class="navbtn">Manga</button>
-            <button class="navbtn">Anime</button>
-            <button class="navbtn">Home</button>
+            <div class="navbtns">
+                <button class="navbtn">Sign-up</button>
+                <button class="navbtn">About_Us</button>
+                <button class="navbtn">Manga</button>
+                <button class="navbtn">Anime</button>
+                <button class="navbtn">Home</button>
+            </div>
+            <button id="navmenu">
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+            </button>
         </nav>
     </header>
     <main class="signup">
@@ -441,6 +476,20 @@ function eventDetector() {
     document.querySelectorAll(".pAniManBtn").forEach((elem) => {
         elem.addEventListener("click", () => contextCard(elem));
     });
+
+    document.getElementById('navmenu').addEventListener("click", () => {
+        let navbtn = document.querySelector('.navbtns')
+
+        if (navbtn.style.height == 0) {
+            navbtn.style = 'height: 10em;'
+        }
+        else if (navbtn.style.height == '0em') {
+            navbtn.style = 'height: 10em;'
+        }
+        else {
+        navbtn.style = 'height: 0em;'
+        }
+    })
 }
 
 eventDetector();

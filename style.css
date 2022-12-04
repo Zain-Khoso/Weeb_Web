@@ -6,486 +6,1453 @@ body {
     overflow: auto;
 }
 
-header {
-    width: 100%;   
-}
-
-nav {
-    width: 100%;
-    height: 5em;
-    background-color: rgba(0, 0, 0, 0.861);
-}
-nav img {
-    width: 4.5em;
-    height: 4.5em;
-    margin: 5px 5px 0px 5px;
-    float: left;
-}
-nav h2{
-    text-decoration: underline white;
-    font-size: 50px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 10px 5px 0px 20px;
-    color: white;
-    float: left;
-    transition: font-size 2s, color 2s, text-decoration-color 2s;
-}
-nav h2:hover{
-    font-size: 55px;
-    color: aqua;
-    cursor: pointer;
-    text-decoration-color: aqua;
-}
-nav button {
-    width: 8em;
-    height: 5rem;
-    background-color: rgba(255, 255, 255, 0);
-    color: white;
-    border: none;
-    font-size: large;
-    float: right;
-    outline: none;
-    transition: background-color 1s;
-}
-nav button:hover {
-    background-color: rgb(73, 73, 73);
-    cursor: pointer;
-}
-
-main.hometab {
-    margin: 2em;
-    text-align: left;
-}
-main.hometab h1.hometab {
-    width: fit-content;
-    font-size: 45px;
-    font-family: Arial, sans-serif;
-    color: rgba(38, 119, 218, 0.921);
-    text-decoration: underline;
-    transition: font-size 3s, color 3s;
-}
-main.hometab h1.hometab:hover {
-    font-size: 55px;
-    color: rgba(57, 209, 159, 0.839);
-    cursor: pointer;
-}
-main.hometab h3.hometab{
-    width: 30em;
-    font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-    margin-bottom: 2em;
-}
-main.hometab h3.hometab button.hometab {
-    width: fit-content;
-    height: fit-content;
-    background-color: rgba(255, 255, 255, 0);
-    color: white;
-    font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: none;
-    outline: none;
-    transition: color 1s;
-}
-main.hometab h3.hometab button.hometab:hover {
-    color: rgba(63, 199, 56, 0.709);
-    cursor: pointer;
-}
-
-main.animetab {
-    margin: 2em;
-    text-align: left;
-}
-main.animetab section.animetab {
-    margin-top: 3em;
-}
-main.animetab h1.animetab {
-    width: fit-content;
-    font-size: 40px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgba(65, 246, 33, 0.621);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    margin-bottom: 10px;
-    transition: font-size 3s, color 3s;
-}
-main.animetab h1.animetab:hover {
-    font-size: 50px;
-    color: rgb(65, 246, 33);
-    cursor: pointer;
-}
-main.animetab button.animetab {
-    width: fit-content;
-    font-size: 45px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    color: rgba(65, 246, 33, 0.621);
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    outline: none;
-    margin-bottom: 10px;
-    transition: font-size 3s, color 3s;
-}
-main.animetab button.animetab:hover {
-    font-size: 50px;
-    color: rgb(65, 246, 33);
-    cursor: pointer;
-}
-main.animetab h3.animetab{
-    width: 30em;
-    font-size: 25px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-}
-main.animetab h3.popularAnimeList {
-    width: 40em;
-    height: fit-content;
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-    gap: 1em;
-}
-main.animetab h3.popularAnimeList button.animetab {
-    width: fit-content;
-    height: fit-content;
-    background-color: rgba(21, 255, 142, 0.581);
-    border-radius: 0.3em;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-}
-main.animetab h3.popularAnimeList button.animetab h1.animetab {
-    width: fit-content;
-    font-size: 20px;
-    font-family: Georgia, Times, 'Times New Roman';
-    color: rgb(255, 255, 255);
-    background-color: rgba(21, 255, 142, 0);
-    text-decoration: none;
-    padding: 5px;
-    margin: 2px;
-}
-main.animetab ol.animetab {
-    list-style-type: none;
-}
-main.animetab a.animetab {
-    width: fit-content;
-    height: fit-content;
-    background-color: rgba(255, 255, 255, 0);
-    color: rgb(37, 176, 245);
-    font-size: 25px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    border: none;
-    outline: none;
-    transition: color 1s, font-size 1s;
-}
-main.animetab a.animetab:hover {
-    cursor: pointer;
-    color: aquamarine;
-    font-size: xx-large;
-}
-
-main.mangatab {
-    margin: 2em;
-    text-align: left;
-}
-main.mangatab section.mangatab {
-    margin-top: 3em;
-}
-main.mangatab h1.mangatab {
-    width: fit-content;
-    font-size: 40px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgba(65, 246, 33, 0.621);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    margin-bottom: 10px;
-    transition: font-size 3s, color 3s;
-}
-main.mangatab h1.mangatab:hover {
-    font-size: 50px;
-    color: rgb(65, 246, 33);
-    cursor: pointer;
-}
-main.mangatab h3.mangatab{
-    width: 30em;
-    font-size: 25px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-}
-main.mangatab h3.popularMangaList {
-    width: 40em;
-    height: fit-content;
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-    gap: 1em;
-}
-main.mangatab h3.popularMangaList button.mangatab {
-    width: fit-content;
-    height: fit-content;
-    background-color: rgba(21, 255, 142, 0.581);
-    border: none;
-    border-radius: 1em;
-    outline: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-}
-main.mangatab h3.popularMangaList button.mangatab h1.mangatab {
-    width: fit-content;
-    font-size: 20px;
-    font-family: Georgia, Times, 'Times New Roman';
-    color: rgb(255, 255, 255);
-    background-color: rgba(21, 255, 142, 0);
-    text-decoration: none;
-    padding: 5px;
-    border-radius: 1em;
-    margin: 2px;
-}
-main.mangatab a.mangatab {
-    width: fit-content;
-    height: fit-content;
-    background-color: rgba(255, 255, 255, 0);
-    color: rgb(37, 176, 245);
-    font-size: 25px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    border: none;
-    outline: none;
-    transition: color 1s, font-size 1s;
-}
-main.mangatab a.mangatab:hover {
-    cursor: pointer;
-    color: aquamarine;
-    font-size: xx-large;
-}
-
-main.abouttab {
-    margin: 2em;
-    text-align: left;
-}
-main.abouttab section.abouttab {
-    margin-top: 3em;
-}
-main.abouttab section.abouttab img.abouttab.logo {
-    width: 15em;
-    height: 15em;
-    margin-right: 2em;
-    float: left;
-    transition: transform 2s;
-}
-main.abouttab section.abouttab img.abouttab.logo:hover {
-    transform: rotate(360deg);
-}
-main.abouttab h1.abouttab {
-    width: fit-content;
-    font-size: 60px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    color: tomato;
-    margin: 10px 400px 5px 0px;
-    transition: color 3s;
-    float: left;
-}
-main.abouttab h1.abouttab:hover {
-    color: wheat;
-    cursor: none;
-}
-main.abouttab h3.abouttab{
-    width: 40em;
-    font-size: 25px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(255, 224, 224);
-}
-main.abouttab section.abouttab.founder {
-    box-sizing: border-box;
-    width: 70em;
-    text-align: center;
-    padding: 1em;
-    margin: 5em auto 0px auto;
-}
-main.abouttab section.abouttab.founder img.abouttab.founder {
-    width: 20em;
-    height: 20em;
-    border-radius: 50%;
-    margin: 1em 0em 1em 0em;
-    align-self: center;
-    transition: width 2s, height 2s, transform 2s;
-}
-main.abouttab section.abouttab.founder img.abouttab.founder:hover {
-    width: 40em;
-    height: 40em;
-    transform: rotate(360deg);
-}
-main.abouttab section.abouttab.founder h1.abouttab.founder {
-    width: fit-content;
-    font-size: 60px;
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    color: rgb(255, 197, 71);
-    text-align: center;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    margin: 0em 5em 0em 7em;
-}
-main.abouttab section.abouttab.founder h1.abouttab.founder:hover {
-    cursor: default;
-}
-main.abouttab section.abouttab.founder div.abouttab.founder {
-    margin: 0.5em 6em 2em 22em;
-}
-main.abouttab section.abouttab.founder div.abouttab.founder h1.abouttab.foundername {
-    font-size: 50px;
-    font-family: 'Times New Roman', serif;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    color: rgb(71, 148, 255);
-    margin: 0px 0px 50px 0px;
-    transition: color 0.5s, font-size 0.5s, transform 0.5s;
-}
-main.abouttab section.abouttab.founder div.abouttab.founder h1.abouttab.foundername:hover {
-    color: aquamarine;
-    transform: rotate(36deg);
-    cursor: default;
-}
-
-main.signup {
-    margin: 2em;
-    text-align: left;
-}
-main.signup div.form {
-    box-sizing: border-box;
-    width: 20em;
-    height: fit-content;
-    background-color: cadetblue;
-    font-size: x-large;
-    font-weight: 400;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding: 1em;
-    border: 1px solid white;
-    border-radius: 1em;
-    margin: 0px auto 0px auto;
+button#navmenu {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 0px;
+    height: 0px;
     overflow: hidden;
 }
-main.signup div.form div.signup {
-    margin: 10px;
-}
-main.signup div.form div.main {
-    padding-top: 0.5em;
-    border-top: 1px solid black;
-    margin-top: 1em;
-}
-main.signup div.form div.signup input {
-    width: 100px;
-    font-size: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    outline: none;
-    border: none;
-}
-main.signup div.form div.signup input#email {
-    width: 210px;
-}
-main.signup div.form div.signup input#male {
-    width: fit-content;
-    margin-right: 5px;
-}
-main.signup div.form div.signup input#female {
-    width: fit-content;
-}
-main.signup div.form div.btndiv {
-    margin-top: 1em;
-    display: flex;
-    justify-content: space-evenly;
-}
-main.signup div.form div.btndiv button {
-    width: 6rem;
-    height: 2rem;
-    font-size: 1rem;
-    align-content: center;
-    background-color: rgb(53, 160, 253);
-    color: white;
-    border: 1px solid black;
-    outline: none;
-}
 
-div#pAniManContextWin {
-    width: 30em;
-    height: 35em;
-    background-color: rgb(153, 153, 153);
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 1em;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 0px 500px rgb(0, 0, 0);
-    overflow: hidden;
+@media only screen and (min-width: 1200px){
+    
+    header {
+        width: 100%;   
+    }
+    
+    nav {
+        width: 100%;
+        height: 5em;
+        background-color: rgba(0, 0, 0, 0.861);
+    }
+    nav img {
+        width: 4.5em;
+        height: 4.5em;
+        margin: 5px 5px 0px 5px;
+        float: left;
+    }
+    nav h2{
+        text-decoration: underline white;
+        font-size: 50px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin: 10px 5px 0px 20px;
+        color: white;
+        float: left;
+        transition: font-size 2s, color 2s, text-decoration-color 2s;
+    }
+    nav h2:hover{
+        font-size: 55px;
+        color: aqua;
+        cursor: pointer;
+        text-decoration-color: aqua;
+    }
+    nav button {
+        width: 8em;
+        height: 5rem;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        border: none;
+        font-size: large;
+        float: right;
+        outline: none;
+        transition: background-color 1s;
+    }
+    nav button:hover {
+        background-color: rgb(73, 73, 73);
+        cursor: pointer;
+    }
+    
+    main.hometab {
+        margin: 2em;
+        text-align: left;
+    }
+    main.hometab h1.hometab {
+        width: fit-content;
+        font-size: 45px;
+        font-family: Arial, sans-serif;
+        color: rgba(38, 119, 218, 0.921);
+        text-decoration: underline;
+        transition: font-size 3s, color 3s;
+    }
+    main.hometab h1.hometab:hover {
+        font-size: 55px;
+        color: rgba(57, 209, 159, 0.839);
+        cursor: pointer;
+    }
+    main.hometab h3.hometab{
+        width: 30em;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+        margin-bottom: 2em;
+    }
+    main.hometab h3.hometab button.hometab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: none;
+        outline: none;
+        transition: color 1s;
+    }
+    main.hometab h3.hometab button.hometab:hover {
+        color: rgba(63, 199, 56, 0.709);
+        cursor: pointer;
+    }
+    
+    main.animetab {
+        margin: 2em;
+        text-align: left;
+    }
+    main.animetab section.animetab {
+        margin-top: 3em;
+    }
+    main.animetab h1.animetab {
+        width: fit-content;
+        font-size: 40px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: rgba(65, 246, 33, 0.621);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        margin-bottom: 10px;
+        transition: font-size 3s, color 3s;
+    }
+    main.animetab h1.animetab:hover {
+        font-size: 50px;
+        color: rgb(65, 246, 33);
+        cursor: pointer;
+    }
+    main.animetab button.animetab {
+        width: fit-content;
+        font-size: 45px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        color: rgba(65, 246, 33, 0.621);
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        outline: none;
+        margin-bottom: 10px;
+        transition: font-size 3s, color 3s;
+    }
+    main.animetab button.animetab:hover {
+        font-size: 50px;
+        color: rgb(65, 246, 33);
+        cursor: pointer;
+    }
+    main.animetab h3.animetab{
+        width: 30em;
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+    }
+    main.animetab h3.popularAnimeList {
+        width: 40em;
+        height: fit-content;
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+    main.animetab h3.popularAnimeList button.animetab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(21, 255, 142, 0.581);
+        border-radius: 0.3em;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+    main.animetab h3.popularAnimeList button.animetab h1.animetab {
+        width: fit-content;
+        font-size: 20px;
+        font-family: Georgia, Times, 'Times New Roman';
+        color: rgb(255, 255, 255);
+        background-color: rgba(21, 255, 142, 0);
+        text-decoration: none;
+        padding: 5px;
+        margin: 2px;
+    }
+    main.animetab ol.animetab {
+        list-style-type: none;
+    }
+    main.animetab a.animetab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        color: rgb(37, 176, 245);
+        font-size: 25px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        border: none;
+        outline: none;
+        transition: color 1s, font-size 1s;
+    }
+    main.animetab a.animetab:hover {
+        cursor: pointer;
+        color: aquamarine;
+        font-size: xx-large;
+    }
+    
+    main.mangatab {
+        margin: 2em;
+        text-align: left;
+    }
+    main.mangatab section.mangatab {
+        margin-top: 3em;
+    }
+    main.mangatab h1.mangatab {
+        width: fit-content;
+        font-size: 40px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: rgba(65, 246, 33, 0.621);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        margin-bottom: 10px;
+        transition: font-size 3s, color 3s;
+    }
+    main.mangatab h1.mangatab:hover {
+        font-size: 50px;
+        color: rgb(65, 246, 33);
+        cursor: pointer;
+    }
+    main.mangatab h3.mangatab{
+        width: 30em;
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+    }
+    main.mangatab h3.popularMangaList {
+        width: 40em;
+        height: fit-content;
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+    main.mangatab h3.popularMangaList button.mangatab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(21, 255, 142, 0.581);
+        border: none;
+        border-radius: 1em;
+        outline: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+    main.mangatab h3.popularMangaList button.mangatab h1.mangatab {
+        width: fit-content;
+        font-size: 20px;
+        font-family: Georgia, Times, 'Times New Roman';
+        color: rgb(255, 255, 255);
+        background-color: rgba(21, 255, 142, 0);
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 1em;
+        margin: 2px;
+    }
+    main.mangatab a.mangatab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        color: rgb(37, 176, 245);
+        font-size: 25px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        border: none;
+        outline: none;
+        transition: color 1s, font-size 1s;
+    }
+    main.mangatab a.mangatab:hover {
+        cursor: pointer;
+        color: aquamarine;
+        font-size: xx-large;
+    }
+    
+    main.abouttab {
+        margin: 2em;
+        text-align: left;
+    }
+    main.abouttab section.abouttab {
+        margin-top: 3em;
+    }
+    main.abouttab section.abouttab img.abouttab.logo {
+        width: 15em;
+        height: 15em;
+        margin-right: 2em;
+        float: left;
+        transition: transform 2s;
+    }
+    main.abouttab section.abouttab img.abouttab.logo:hover {
+        transform: rotate(360deg);
+    }
+    main.abouttab h1.abouttab {
+        width: fit-content;
+        font-size: 60px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        color: tomato;
+        margin: 10px 400px 5px 0px;
+        transition: color 3s;
+        float: left;
+    }
+    main.abouttab h1.abouttab:hover {
+        color: wheat;
+        cursor: none;
+    }
+    main.abouttab h3.abouttab{
+        width: 40em;
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(255, 224, 224);
+    }
+    main.abouttab section.abouttab.founder {
+        box-sizing: border-box;
+        width: 70em;
+        text-align: center;
+        padding: 1em;
+        margin: 5em auto 0px auto;
+    }
+    main.abouttab section.abouttab.founder img.abouttab.founder {
+        width: 20em;
+        height: 20em;
+        border-radius: 50%;
+        margin: 1em 0em 1em 0em;
+        align-self: center;
+        transition: width 2s, height 2s, transform 2s;
+    }
+    main.abouttab section.abouttab.founder img.abouttab.founder:hover {
+        width: 40em;
+        height: 40em;
+        transform: rotate(360deg);
+    }
+    main.abouttab section.abouttab.founder h1.abouttab.founder {
+        width: fit-content;
+        font-size: 60px;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        color: rgb(255, 197, 71);
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        margin: 0em 5em 0em 7em;
+    }
+    main.abouttab section.abouttab.founder h1.abouttab.founder:hover {
+        cursor: default;
+    }
+    main.abouttab section.abouttab.founder div.abouttab.founder {
+        margin: 0.5em 6em 2em 22em;
+    }
+    main.abouttab section.abouttab.founder div.abouttab.founder h1.abouttab.foundername {
+        font-size: 50px;
+        font-family: 'Times New Roman', serif;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        color: rgb(71, 148, 255);
+        margin: 0px 0px 50px 0px;
+        transition: color 0.5s, font-size 0.5s, transform 0.5s;
+    }
+    main.abouttab section.abouttab.founder div.abouttab.founder h1.abouttab.foundername:hover {
+        color: aquamarine;
+        transform: rotate(36deg);
+        cursor: default;
+    }
+    
+    main.signup {
+        margin: 2em;
+        text-align: left;
+    }
+    main.signup div.form {
+        box-sizing: border-box;
+        width: 20em;
+        height: fit-content;
+        background-color: cadetblue;
+        font-size: x-large;
+        font-weight: 400;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 1em;
+        border: 1px solid white;
+        border-radius: 1em;
+        margin: 0px auto 0px auto;
+        overflow: hidden;
+    }
+    main.signup div.form div.signup {
+        margin: 10px;
+    }
+    main.signup div.form div.main {
+        padding-top: 0.5em;
+        border-top: 1px solid black;
+        margin-top: 1em;
+    }
+    main.signup div.form div.signup input {
+        width: 100px;
+        font-size: 1rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        outline: none;
+        border: none;
+    }
+    main.signup div.form div.signup input#email {
+        width: 210px;
+    }
+    main.signup div.form div.signup input#male {
+        width: fit-content;
+        margin-right: 5px;
+    }
+    main.signup div.form div.signup input#female {
+        width: fit-content;
+    }
+    main.signup div.form div.btndiv {
+        margin-top: 1em;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    main.signup div.form div.btndiv button {
+        width: 6rem;
+        height: 2rem;
+        font-size: 1rem;
+        align-content: center;
+        background-color: rgb(53, 160, 253);
+        color: white;
+        border: 1px solid black;
+        outline: none;
+    }
+    
+    div#pAniManContextWin {
+        width: 30em;
+        height: 35em;
+        background-color: rgb(153, 153, 153);
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 1em;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 0px 500px rgb(0, 0, 0);
+        overflow: hidden;
+    }
+    div#pAniManContextWin div#head {
+        width: 100%;
+        height: 3em;
+        padding-bottom: 5px;
+        border-bottom: 1px solid black;
+        margin-bottom: 1em;
+    }
+    div#pAniManContextWin div#head button {
+        width: fit-content;
+        height: fit-content;
+        color: white;
+        background-color: red;
+        padding: 3px 7px;
+        border: 1px solid black;
+        margin-top: 15px;
+        margin-right: 7px;
+        outline: none;
+        float: right;
+    }
+    div#pAniManContextWin div#head h1 {
+        width: fit-content;
+        height: fit-content;
+        font-size: 50px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        float: left;
+    }
+    div#pAniManContextWin div#body {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
+    div#pAniManContextWin div#body img {
+        width: 12em;
+        height: 18em;
+        margin: 10px 9em;
+    }
+    div#pAniManContextWin div#body h1 {
+        width: fit-content;
+        height: fit-content;
+        margin: 5px auto;
+        font-size: 50px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 200;
+    }
+    div#pAniManContextWin div#body h2 {
+        width: fit-content;
+        height: fit-content;
+        margin: 5px auto;
+        font-size: 30px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 200;
+    }
+    div#pAniManContextWin div#body h3 {
+        font-size: 30px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        float: left;
+        margin-right: 10px;
+    }
+    div#pAniManContextWin div#body h4 {
+        width: 95%;
+        height: fit-content;
+        font-size: 20px;
+        font-family: monospace;
+        padding: 5px;
+        margin: 5px auto 50px auto;
+        float: left;
+    }
 }
-div#pAniManContextWin div#head {
-    width: 100%;
-    height: 3em;
-    padding-bottom: 5px;
-    border-bottom: 1px solid black;
-    margin-bottom: 1em;
+@media only screen and (min-width: 426px) and (max-width: 1200px){
+    
+    header {
+        width: 100%;   
+    }
+    
+    nav {
+        width: 100%;
+        height: 4em;
+        background-color: rgba(0, 0, 0, 0.861);
+    }
+    nav img {
+        width: 3em;
+        height: 3em;
+        margin: 7px 7px 0px 7px;
+        float: left;
+    }
+    nav h2{
+        text-decoration: underline white;
+        font-size: 30px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin: 10px 5px 0px 10px;
+        color: white;
+        float: left;
+        transition: font-size 2s, color 2s, text-decoration-color 2s;
+    }
+    nav h2:hover{
+        font-size: 35px;
+        color: aqua;
+        cursor: pointer;
+        text-decoration-color: aqua;
+    }
+    nav button {
+        width: 5em;
+        height: 4rem;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        border: none;
+        font-size: medium;
+        float: right;
+        outline: none;
+        transition: background-color 1s;
+    }
+    nav button:hover {
+        background-color: rgb(73, 73, 73);
+        cursor: pointer;
+    }
+    
+    main.hometab {
+        margin: 2em;
+        text-align: left;
+    }
+    main.hometab h1.hometab {
+        width: fit-content;
+        font-size: 45px;
+        font-family: Arial, sans-serif;
+        color: rgba(38, 119, 218, 0.921);
+        text-decoration: underline;
+        transition: font-size 3s, color 3s;
+    }
+    main.hometab h1.hometab:hover {
+        font-size: 55px;
+        color: rgba(57, 209, 159, 0.839);
+        cursor: pointer;
+    }
+    main.hometab h3.hometab{
+        width: 20em;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+        margin-bottom: 2em;
+    }
+    main.hometab h3.hometab button.hometab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: none;
+        outline: none;
+        transition: color 1s;
+    }
+    main.hometab h3.hometab button.hometab:hover {
+        color: rgba(63, 199, 56, 0.709);
+        cursor: pointer;
+    }
+    
+    main.animetab {
+        margin: 2em;
+        text-align: left;
+    }
+    main.animetab section.animetab {
+        margin-top: 3em;
+    }
+    main.animetab h1.animetab {
+        width: fit-content;
+        font-size: 40px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: rgba(65, 246, 33, 0.621);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        margin-bottom: 10px;
+        transition: font-size 3s, color 3s;
+    }
+    main.animetab h1.animetab:hover {
+        font-size: 50px;
+        color: rgb(65, 246, 33);
+        cursor: pointer;
+    }
+    main.animetab button.animetab {
+        width: fit-content;
+        font-size: 45px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        color: rgba(65, 246, 33, 0.621);
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        outline: none;
+        margin-bottom: 10px;
+        transition: font-size 3s, color 3s;
+    }
+    main.animetab button.animetab:hover {
+        font-size: 50px;
+        color: rgb(65, 246, 33);
+        cursor: pointer;
+    }
+    main.animetab h3.animetab{
+        width: 25em;
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+    }
+    main.animetab h3.popularAnimeList {
+        width: 25em;
+        height: fit-content;
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+    main.animetab h3.popularAnimeList button.animetab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(21, 255, 142, 0.581);
+        border-radius: 0.3em;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+    main.animetab h3.popularAnimeList button.animetab h1.animetab {
+        width: fit-content;
+        font-size: 20px;
+        font-family: Georgia, Times, 'Times New Roman';
+        color: rgb(255, 255, 255);
+        background-color: rgba(21, 255, 142, 0);
+        text-decoration: none;
+        padding: 5px;
+        margin: 2px;
+    }
+    main.animetab ol.animetab {
+        list-style-type: none;
+    }
+    main.animetab a.animetab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        color: rgb(37, 176, 245);
+        font-size: 25px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        border: none;
+        outline: none;
+        transition: color 1s, font-size 1s;
+    }
+    main.animetab a.animetab:hover {
+        cursor: pointer;
+        color: aquamarine;
+        font-size: xx-large;
+    }
+    
+    main.mangatab {
+        margin: 2em;
+        text-align: left;
+    }
+    main.mangatab section.mangatab {
+        margin-top: 3em;
+    }
+    main.mangatab h1.mangatab {
+        width: fit-content;
+        font-size: 40px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: rgba(65, 246, 33, 0.621);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        margin-bottom: 10px;
+        transition: font-size 3s, color 3s;
+    }
+    main.mangatab h1.mangatab:hover {
+        font-size: 50px;
+        color: rgb(65, 246, 33);
+        cursor: pointer;
+    }
+    main.mangatab h3.mangatab{
+        width: 25em;
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+    }
+    main.mangatab h3.popularMangaList {
+        width: 25em;
+        height: fit-content;
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+    main.mangatab h3.popularMangaList button.mangatab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(21, 255, 142, 0.581);
+        border: none;
+        border-radius: 1em;
+        outline: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+    main.mangatab h3.popularMangaList button.mangatab h1.mangatab {
+        width: fit-content;
+        font-size: 20px;
+        font-family: Georgia, Times, 'Times New Roman';
+        color: rgb(255, 255, 255);
+        background-color: rgba(21, 255, 142, 0);
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 1em;
+        margin: 2px;
+    }
+    main.mangatab a.mangatab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        color: rgb(37, 176, 245);
+        font-size: 25px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        border: none;
+        outline: none;
+        transition: color 1s, font-size 1s;
+    }
+    main.mangatab a.mangatab:hover {
+        cursor: pointer;
+        color: aquamarine;
+        font-size: xx-large;
+    }
+    
+    main.abouttab {
+        margin: 2em;
+        text-align: left;
+    }
+    main.abouttab section.abouttab {
+        margin-top: 3em;
+    }
+    main.abouttab section.abouttab img.abouttab.logo {
+        width: 15em;
+        height: 15em;
+        margin-right: 2em;
+        float: left;
+        transition: transform 2s;
+    }
+    main.abouttab section.abouttab img.abouttab.logo:hover {
+        transform: rotate(360deg);
+    }
+    main.abouttab h1.abouttab {
+        width: fit-content;
+        font-size: 50px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        color: tomato;
+        margin: 10px 10px 5px 0px;
+        transition: color 3s;
+        float: left;
+    }
+    main.abouttab h1.abouttab:hover {
+        color: wheat;
+        cursor: none;
+    }
+    main.abouttab h3.abouttab{
+        width: 24em;
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(255, 224, 224);
+    }
+    main.abouttab section.abouttab.founder {
+        box-sizing: border-box;
+        width: 30em;
+        text-align: center;
+        padding: 1em;
+        margin: 5em auto 0px auto;
+    }
+    main.abouttab section.abouttab.founder img.abouttab.founder {
+        width: 20em;
+        height: 20em;
+        border-radius: 50%;
+        margin: 1em 0em 1em 0em;
+        transition: width 2s, height 2s, transform 2s;
+    }
+    main.abouttab section.abouttab.founder img.abouttab.founder:hover {
+        width: 25em;
+        height: 25em;
+        transform: rotate(360deg);
+    }
+    main.abouttab section.abouttab.founder h1.abouttab.founder {
+        width: fit-content;
+        font-size: 50px;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        color: rgb(255, 197, 71);
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        margin: 0em 5em 0em 2.5em;
+    }
+    main.abouttab section.abouttab.founder h1.abouttab.founder:hover {
+        cursor: default;
+    }
+    main.abouttab section.abouttab.founder div.abouttab.founder {
+        margin: 0.5em 0em 2em 2.4em;
+    }
+    main.abouttab section.abouttab.founder div.abouttab.founder h1.abouttab.foundername {
+        font-size: 50px;
+        font-family: 'Times New Roman', serif;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        color: rgb(71, 148, 255);
+        margin: 0px 0px 50px 0px;
+        transition: color 0.5s, font-size 0.5s, transform 0.5s;
+    }
+    main.abouttab section.abouttab.founder div.abouttab.founder h1.abouttab.foundername:hover {
+        color: aquamarine;
+        transform: rotate(36deg);
+        cursor: default;
+    }
+    
+    main.signup {
+        margin: 2em;
+        text-align: left;
+    }
+    main.signup div.form {
+        box-sizing: border-box;
+        width: 20em;
+        height: fit-content;
+        background-color: cadetblue;
+        font-size: x-large;
+        font-weight: 400;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 1em;
+        border: 1px solid white;
+        border-radius: 1em;
+        margin: 0px auto 0px auto;
+        overflow: hidden;
+    }
+    main.signup div.form div.signup {
+        margin: 10px;
+    }
+    main.signup div.form div.main {
+        padding-top: 0.5em;
+        border-top: 1px solid black;
+        margin-top: 1em;
+    }
+    main.signup div.form div.signup input {
+        width: 100px;
+        font-size: 1rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        outline: none;
+        border: none;
+    }
+    main.signup div.form div.signup input#email {
+        width: 210px;
+    }
+    main.signup div.form div.signup input#male {
+        width: fit-content;
+        margin-right: 5px;
+    }
+    main.signup div.form div.signup input#female {
+        width: fit-content;
+    }
+    main.signup div.form div.btndiv {
+        margin-top: 1em;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    main.signup div.form div.btndiv button {
+        width: 6rem;
+        height: 2rem;
+        font-size: 1rem;
+        align-content: center;
+        background-color: rgb(53, 160, 253);
+        color: white;
+        border: 1px solid black;
+        outline: none;
+    }
+    
+    div#pAniManContextWin {
+        width: 30em;
+        height: 35em;
+        background-color: rgb(153, 153, 153);
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 1em;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 0px 500px rgb(0, 0, 0);
+        overflow: hidden;
+    }
+    div#pAniManContextWin div#head {
+        width: 100%;
+        height: 3em;
+        padding-bottom: 5px;
+        border-bottom: 1px solid black;
+        margin-bottom: 1em;
+    }
+    div#pAniManContextWin div#head button {
+        width: fit-content;
+        height: fit-content;
+        color: white;
+        background-color: red;
+        padding: 3px 7px;
+        border: 1px solid black;
+        margin-top: 15px;
+        margin-right: 7px;
+        outline: none;
+        float: right;
+    }
+    div#pAniManContextWin div#head h1 {
+        width: fit-content;
+        height: fit-content;
+        font-size: 50px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        float: left;
+    }
+    div#pAniManContextWin div#body {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
+    div#pAniManContextWin div#body img {
+        width: 12em;
+        height: 18em;
+        margin: 10px 9em;
+    }
+    div#pAniManContextWin div#body h1 {
+        width: fit-content;
+        height: fit-content;
+        margin: 5px auto;
+        font-size: 50px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 200;
+    }
+    div#pAniManContextWin div#body h2 {
+        width: fit-content;
+        height: fit-content;
+        margin: 5px auto;
+        font-size: 30px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 200;
+    }
+    div#pAniManContextWin div#body h3 {
+        font-size: 30px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        float: left;
+        margin-right: 10px;
+    }
+    div#pAniManContextWin div#body h4 {
+        width: 95%;
+        height: fit-content;
+        font-size: 20px;
+        font-family: monospace;
+        padding: 5px;
+        margin: 5px auto 50px auto;
+        float: left;
+    }
 }
-div#pAniManContextWin div#head button {
-    width: fit-content;
-    height: fit-content;
-    color: white;
-    background-color: red;
-    padding: 3px 7px;
-    border: 1px solid black;
-    margin-top: 15px;
-    margin-right: 7px;
-    outline: none;
-    float: right;
-}
-div#pAniManContextWin div#head h1 {
-    width: fit-content;
-    height: fit-content;
-    font-size: 50px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    float: left;
-}
-div#pAniManContextWin div#body {
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-}
-div#pAniManContextWin div#body img {
-    width: 12em;
-    height: 18em;
-    margin: 10px 9em;
-}
-div#pAniManContextWin div#body h1 {
-    width: fit-content;
-    height: fit-content;
-    margin: 5px auto;
-    font-size: 50px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: 200;
-}
-div#pAniManContextWin div#body h2 {
-    width: fit-content;
-    height: fit-content;
-    margin: 5px auto;
-    font-size: 30px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: 200;
-}
-div#pAniManContextWin div#body h3 {
-    font-size: 30px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    float: left;
-    margin-right: 10px;
-}
-div#pAniManContextWin div#body h4 {
-    width: 95%;
-    height: fit-content;
-    font-size: 20px;
-    font-family: monospace;
-    padding: 5px;
-    margin: 5px auto 50px auto;
-    float: left;
+@media only screen and (max-width: 426px){
+    
+    header {
+        width: 100%;   
+    }
+    
+    nav {
+        width: 100%;
+        height: 4em;
+        background-color: rgba(0, 0, 0, 0.861);
+        
+    }
+    nav div.navbtns {
+        float: right;
+        width: fit-content;
+        height: 0em;
+        margin-top: 4em;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.861);
+        display: flex;
+        flex-direction: column-reverse;
+        overflow: hidden;
+        transition: height 1s;
+    }
+    nav button#navmenu {
+        box-sizing: border-box;
+        width: 2em;
+        height: 2em;
+        margin: 1em 1em;
+        overflow: hidden;
+        background-color: aliceblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        float: right;
+    }
+    nav button#navmenu div.menudesign{
+        width: 1.4em;
+        height: 0.3em;
+        background-color: black;
+        border-radius: 1em;
+
+    }
+    nav img {
+        width: 3em;
+        height: 3em;
+        margin: 7px 7px 0px 7px;
+        float: left;
+    }
+    nav h2{
+        text-decoration: underline white;
+        font-size: 30px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin: 15px 5px 0px 5px;
+        color: white;
+        float: left;
+        transition: font-size 2s, color 2s, text-decoration-color 2s;
+    }
+    nav h2:hover{
+        font-size: 35px;
+        color: aqua;
+        cursor: pointer;
+        text-decoration-color: aqua;
+    }
+    nav button {
+        width: 5em;
+        height: 4rem;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        border: none;
+        font-size: medium;
+        float: right;
+        outline: none;
+        transition: background-color 1s;
+    }
+    nav button:hover {
+        background-color: rgb(73, 73, 73);
+        cursor: pointer;
+    }
+    
+    main.hometab {
+        margin: 2em;
+        text-align: left;
+    }
+    main.hometab h1.hometab {
+        width: fit-content;
+        font-size: 35px;
+        font-family: Arial, sans-serif;
+        color: rgba(38, 119, 218, 0.921);
+        text-decoration: underline;
+    }
+    main.hometab h3.hometab{
+        width: 18em;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+        margin-bottom: 2em;
+    }
+    main.hometab h3.hometab button.hometab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: none;
+        outline: none;
+    }
+    
+    main.animetab {
+        margin: 2em;
+        text-align: left;
+    }
+    main.animetab section.animetab {
+        margin-top: 3em;
+    }
+    main.animetab h1.animetab {
+        width: fit-content;
+        font-size: 35px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: rgba(65, 246, 33, 0.621);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        margin-bottom: 10px;
+    }
+    main.animetab button.animetab {
+        width: fit-content;
+        font-size: 35px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        color: rgba(65, 246, 33, 0.621);
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        outline: none;
+        margin-bottom: 10px;
+    }
+    main.animetab h3.animetab{
+        width: 18em;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+    }
+    main.animetab h3.popularAnimeList {
+        width: 18em;
+        height: fit-content;
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        gap: 0.2em;
+    }
+    main.animetab h3.popularAnimeList button.animetab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(21, 255, 142, 0.581);
+        border-radius: 0.3em;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+    main.animetab h3.popularAnimeList button.animetab h1.animetab {
+        width: fit-content;
+        font-size: 15px;
+        font-family: Georgia, Times, 'Times New Roman';
+        color: rgb(255, 255, 255);
+        background-color: rgba(21, 255, 142, 0);
+        text-decoration: none;
+        padding: 5px;
+        margin: 2px;
+    }
+    main.animetab ol.animetab {
+        list-style-type: none;
+    }
+    main.animetab a.animetab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        color: rgb(37, 176, 245);
+        font-size: 25px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        border: none;
+        outline: none;
+        transition: color 1s, font-size 1s;
+    }
+    main.animetab a.animetab:hover {
+        cursor: pointer;
+        color: aquamarine;
+        font-size: xx-large;
+    }
+    
+    main.mangatab {
+        margin: 2em;
+        text-align: left;
+    }
+    main.mangatab section.mangatab {
+        margin-top: 3em;
+    }
+    main.mangatab h1.mangatab {
+        width: fit-content;
+        font-size: 35px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: rgba(65, 246, 33, 0.621);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        margin-bottom: 10px;
+    }
+    main.mangatab h3.mangatab{
+        width: 18em;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+    }
+    main.mangatab h3.popularMangaList {
+        width: 18em;
+        height: fit-content;
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        gap: 0.2em;
+    }
+    main.mangatab h3.popularMangaList button.mangatab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(21, 255, 142, 0.581);
+        border: none;
+        border-radius: 1em;
+        outline: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+    main.mangatab h3.popularMangaList button.mangatab h1.mangatab {
+        width: fit-content;
+        font-size: 15px;
+        font-family: Georgia, Times, 'Times New Roman';
+        color: rgb(255, 255, 255);
+        background-color: rgba(21, 255, 142, 0);
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 1em;
+        margin: 2px;
+    }
+    main.mangatab a.mangatab {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        color: rgb(37, 176, 245);
+        font-size: 20px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        border: none;
+        outline: none;
+        transition: color 1s, font-size 1s;
+    }
+    main.mangatab a.mangatab:hover {
+        cursor: pointer;
+        color: aquamarine;
+        font-size: xx-large;
+    }
+    
+    main.abouttab {
+        margin: 2em;
+        text-align: left;
+    }
+    main.abouttab section.abouttab {
+        margin-top: 3em;
+    }
+    main.abouttab section.abouttab img.abouttab.logo {
+        width: 10em;
+        height: 10em;
+        margin: 1em auto 0em 8em;
+    }
+    main.abouttab h1.abouttab {
+        width: fit-content;
+        font-size: 50px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        color: tomato;
+        margin: 0em auto 0.3em 1.8em;
+    }
+    main.abouttab h3.abouttab{
+        width: 19em;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(255, 224, 224);
+        text-align: center;
+    }
+    main.abouttab section.abouttab.founder {
+        box-sizing: border-box;
+        width: 19em;
+        padding: 1em;
+        margin: 5em auto 0px auto;
+    }
+    main.abouttab section.abouttab.founder img.abouttab.founder {
+        width: 20em;
+        height: 20em;
+        border-radius: 50%;
+        margin: 1em 0em 1em 0em;
+    }
+    main.abouttab section.abouttab.founder h1.abouttab.founder {
+        width: fit-content;
+        font-size: 40px;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        color: rgb(255, 197, 71);
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        margin: 0em 5em 0em 2em;
+    }
+    main.abouttab section.abouttab.founder div.abouttab.founder {
+        margin: 0.5em 0em 2em 4em;
+    }
+    main.abouttab section.abouttab.founder div.abouttab.founder h1.abouttab.foundername {
+        font-size: 25px;
+        font-family: 'Times New Roman', serif;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        color: rgb(71, 148, 255);
+        margin: 0px 0px 50px 0px;
+        transition: color 0.5s, font-size 0.5s, transform 0.5s;
+        float: left;
+    }
+    main.abouttab section.abouttab.founder div.abouttab.founder h1.abouttab.foundername:hover {
+        color: aquamarine;
+        transform: rotate(36deg);
+        cursor: default;
+    }
+    
+    main.signup {
+        margin: 2em;
+        text-align: left;
+    }
+    main.signup div.form {
+        box-sizing: border-box;
+        width: 15em;
+        height: fit-content;
+        background-color: cadetblue;
+        font-size: x-large;
+        font-weight: 400;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 1em;
+        border: 1px solid white;
+        border-radius: 1em;
+        margin: 0px auto 0px 2.5em;
+        overflow: hidden;
+    }
+    main.signup div.form div.signup {
+        margin: 10px;
+    }
+    main.signup div.form div.main {
+        padding-top: 0.5em;
+        border-top: 1px solid black;
+        margin-top: 1em;
+    }
+    main.signup div.form div.signup input {
+        width: 100px;
+        font-size: 1rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        outline: none;
+        border: none;
+    }
+    main.signup div.form div.signup input#email {
+        width: 210px;
+    }
+    main.signup div.form div.signup input#male {
+        width: fit-content;
+        margin-right: 5px;
+    }
+    main.signup div.form div.signup input#female {
+        width: fit-content;
+    }
+    main.signup div.form div.btndiv {
+        margin-top: 1em;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    main.signup div.form div.btndiv button {
+        width: 6rem;
+        height: 2rem;
+        font-size: 1rem;
+        align-content: center;
+        background-color: rgb(53, 160, 253);
+        color: white;
+        border: 1px solid black;
+        outline: none;
+    }
+    
+    div#pAniManContextWin {
+        width: 20em;
+        height: 30em;
+        background-color: rgb(153, 153, 153);
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 1em;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 0px 500px rgb(0, 0, 0);
+        overflow: hidden;
+    }
+    div#pAniManContextWin div#head {
+        width: 100%;
+        height: 3em;
+        padding-bottom: 2px;
+        border-bottom: 1px solid black;
+        margin-bottom: 1em;
+    }
+    div#pAniManContextWin div#head button {
+        width: fit-content;
+        height: fit-content;
+        color: white;
+        background-color: red;
+        padding: 3px 7px;
+        border: 1px solid black;
+        margin-top: 10px;
+        margin-right: 7px;
+        outline: none;
+        float: right;
+    }
+    div#pAniManContextWin div#head h1 {
+        width: fit-content;
+        height: fit-content;
+        font-size: 30px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        float: left;
+    }
+    div#pAniManContextWin div#body {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
+    div#pAniManContextWin div#body img {
+        width: 8em;
+        height: 12em;
+        margin: 10px 6em;
+    }
+    div#pAniManContextWin div#body h1 {
+        width: fit-content;
+        height: fit-content;
+        margin: 5px auto;
+        font-size: 50px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 200;
+    }
+    div#pAniManContextWin div#body h2 {
+        width: fit-content;
+        height: fit-content;
+        margin: 5px auto;
+        font-size: 30px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 200;
+    }
+    div#pAniManContextWin div#body h3 {
+        font-size: 30px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        float: left;
+        margin-right: 10px;
+    }
+    div#pAniManContextWin div#body h4 {
+        width: 95%;
+        height: fit-content;
+        font-size: 20px;
+        font-family: monospace;
+        padding: 5px;
+        margin: 5px auto 50px auto;
+        float: left;
+    }
 }
