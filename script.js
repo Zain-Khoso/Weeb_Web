@@ -1,4 +1,4 @@
-function tabChanger(node) {
+async function tabChanger(node) {
     switch (node.textContent) {
         case "Home":
             document.body.innerHTML = new innerHTMLGenerator().home;
@@ -7,11 +7,13 @@ function tabChanger(node) {
 
         case "Anime":
             document.body.innerHTML = new innerHTMLGenerator().anime;
+            await pAniManGenerator(node.textContent);
             eventDetector();
             break;
 
         case "Manga":
             document.body.innerHTML = new innerHTMLGenerator().manga;
+            await pAniManGenerator(node.textContent);
             eventDetector();
             break;
 
@@ -27,29 +29,141 @@ function tabChanger(node) {
     }
 }
 
-function anitabeventhadler(node) {
-    switch (node.textContent) {
-        case "Anime Quotes":
-            async function quotegen() {
-                try {
-                    let data = await (
-                        await fetch("https://animchan.vercel.app/api/random")
-                    ).json();
-                    let response = `"${data.quote}". ~~ ${data.character} ~~ from, ${data.anime}.`;
-                    document.querySelector("h3#animequote").textContent =
-                        response;
-                } catch (error) {
-                    document.querySelector("h3#animequote").textContent =
-                        "Unable to fetch a quote, try again. '.'";
-                }
-            }
-            
-            quotegen();
-            break;
-        case "Popular Animes.":
-            console.log(node.textContent);
-            break;
+async function quotegen() {
+    try {
+        let data = await (
+            await fetch("https://animechan.vercel.app/api/random")
+        ).json();
+        let response = `"${data.quote}". ~~ ${data.character} ~~ from, ${data.anime}.`;
+        document.querySelector("h3#animequote").textContent = response;
+    } catch (error) {
+        document.querySelector("h3#animequote").textContent =
+            "Unable to fetch a quote, try again. '.'";
     }
+}
+
+async function pAniManGenerator(node) {
+    try {
+        if (node == "Anime") {
+            let animes = await (await fetch("/assets/data/animes.json")).json();
+            for (let anime of animes) {
+                let container = new innerHTMLGenerator().pAniManHead(
+                    "animetab",
+                    anime.name,
+                    `${anime.episode} Episodes`
+                );
+                document
+                    .querySelector(".popularAnimeList")
+                    .appendChild(container);
+            }
+        } else if (node == "Manga") {
+            let mangas = await (await fetch("/assets/data/mangas.json")).json();
+            for (let manga of mangas) {
+                let container = new innerHTMLGenerator().pAniManHead(
+                    "mangatab",
+                    manga.name,
+                    `${manga.volumes} Volumes`
+                );
+                document
+                    .querySelector(".popularMangaList")
+                    .appendChild(container);
+            }
+        }
+    } catch (error) {
+        return;
+    }
+}
+
+async function contextCard(node) {
+    let tab = Array.from(node.classList)[0];
+    let contentName = node.firstElementChild.textContent.replace(", ", "");
+    let contextData;
+    let contextNode;
+    try {
+        if (tab == "animetab") {
+            let data = await (await fetch("/assets/data/animes.json")).json();
+            contextData = data.find((elem) => elem["name"] == contentName);
+            contextNode = new innerHTMLGenerator().pAniManContext(
+                "Anime Details",
+                contentName,
+                `Episodes: ${contextData.episode}`,
+                contextData.img,
+                contextData.description
+            );
+        } else if (tab == "mangatab") {
+            let data = await (await fetch("/assets/data/mangas.json")).json();
+            contextData = data.find((elem) => elem["name"] == contentName);
+            contextNode = new innerHTMLGenerator().pAniManContext(
+                "Manga Details",
+                contentName,
+                `Volumes: ${contextData.volumes}`,
+                contextData.img,
+                contextData.description
+            );
+        }
+        document.body.appendChild(contextNode);
+    } catch (error) {
+        return;
+    }
+}
+
+function signup() {
+    let gusername = document.getElementById("username").value.trim();
+    let gpassword = document.getElementById("password").value.trim();
+
+    if (gusername == "" || gpassword == "") return;
+
+    if (
+        localStorage.getItem("username") === null ||
+        localStorage.getItem("password") === null
+    ) {
+        localStorage.setItem("username", gusername);
+        localStorage.setItem("password", gpassword);
+        let msg = document.createElement("h6");
+        msg.style = `
+        font-size: xx-large;
+        `;
+        msg.textContent = "Successfully Signed-In";
+
+        document.getElementById("form").appendChild(msg);
+    } else {
+        let susername = localStorage.getItem("username");
+        let spassword = localStorage.getItem("password");
+
+        if (gusername == susername && gpassword == spassword) {
+            let msg = document.createElement("h6");
+            msg.style = `
+                font-size: xx-large;
+            `;
+            msg.textContent = "Successfully Signed-In";
+            document.getElementById("form").appendChild(msg);
+            setTimeout(() => {
+                document.body.innerHTML = new innerHTMLGenerator().home;
+                eventDetector();
+            }, 2000);
+        } else {
+            let container = document.createElement("div");
+            container.innerHTML = `
+            <h6 style="font-size:xx-large;">
+                Incorrect username or Password, click on the button bellow to reset it.
+            </h6>
+            <button onclick="resetudata(this)" style="background-color:red;">Reset</button>
+            `;
+            document.getElementById("form").appendChild(container);
+        }
+    }
+}
+
+function resetudata(node) {
+    localStorage.setItem("username", document.getElementById("username").value);
+    localStorage.setItem("password", document.getElementById("password").value);
+
+    node.parentElement.remove();
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+
+    document.body.innerHTML = new innerHTMLGenerator().home;
+    eventDetector();
 }
 
 function innerHTMLGenerator() {
@@ -58,11 +172,18 @@ function innerHTMLGenerator() {
         <nav>
             <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
-            <button class="navbtn">Sign-up</button>
-            <button class="navbtn">About_Us</button>
-            <button class="navbtn">Manga</button>
-            <button class="navbtn">Anime</button>
-            <button class="navbtn">Home</button>
+            <div class="navbtns">
+                <button class="navbtn">Sign-up</button>
+                <button class="navbtn">About_Us</button>
+                <button class="navbtn">Manga</button>
+                <button class="navbtn">Anime</button>
+                <button class="navbtn">Home</button>
+            </div>
+            <button id="navmenu">
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+            </button>
         </nav>
     </header>
     <main class="hometab">
@@ -93,11 +214,18 @@ function innerHTMLGenerator() {
         <nav>
             <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
-            <button class="navbtn">Sign-up</button>
-            <button class="navbtn">About_Us</button>
-            <button class="navbtn">Manga</button>
-            <button class="navbtn">Anime</button>
-            <button class="navbtn">Home</button>
+            <div class="navbtns">
+                <button class="navbtn">Sign-up</button>
+                <button class="navbtn">About_Us</button>
+                <button class="navbtn">Manga</button>
+                <button class="navbtn">Anime</button>
+                <button class="navbtn">Home</button>
+            </div>
+            <button id="navmenu">
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+            </button>
         </nav>
     </header>
     <main class="animetab">
@@ -137,15 +265,13 @@ function innerHTMLGenerator() {
             </ol>
         </section>
         <section class="animetab">
+            <h1 class="animetab" id="popularAnimes">Popular Animes.</h1>
+            <h3 class="animetab popularAnimeList"></h3>
+        </section>
+        <section class="animetab">
             <button class="animetab animetabbtns" id="animequots">Anime Quotes</button>
             <h3 class="animetab" id="animequote">
                 Click on the header to view Anime Quotes.
-            </h3>
-        </section>
-        <section class="animetab">
-            <button class="animetab animetabbtns" id="animenews">Popular Animes.</button>
-            <h3 class="animetab">
-                Click on the header to view Animes List.
             </h3>
         </section>
     </main>
@@ -156,11 +282,18 @@ function innerHTMLGenerator() {
         <nav>
             <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
-            <button class="navbtn">Sign-up</button>
-            <button class="navbtn">About_Us</button>
-            <button class="navbtn">Manga</button>
-            <button class="navbtn">Anime</button>
-            <button class="navbtn">Home</button>
+            <div class="navbtns">
+                <button class="navbtn">Sign-up</button>
+                <button class="navbtn">About_Us</button>
+                <button class="navbtn">Manga</button>
+                <button class="navbtn">Anime</button>
+                <button class="navbtn">Home</button>
+            </div>
+            <button id="navmenu">
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+            </button>
         </nav>
     </header>
     <main class="mangatab">
@@ -178,10 +311,8 @@ function innerHTMLGenerator() {
             </h3>
         </section>
         <section class="mangatab">
-            <h1 class="mangatab" id="manganews">Popular Mangas.</h1>
-            <h3 class="mangatab">
-                Click on the header to view Manga List.
-            </h3>
+            <h1 class="mangatab" id="popularMangas">Popular Mangas.</h1>
+            <h3 class="mangatab popularMangaList"></h3>
         </section>
     </main>
     
@@ -192,11 +323,18 @@ function innerHTMLGenerator() {
         <nav>
             <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
-            <button class="navbtn">Sign-up</button>
-            <button class="navbtn">About_Us</button>
-            <button class="navbtn">Manga</button>
-            <button class="navbtn">Anime</button>
-            <button class="navbtn">Home</button>
+            <div class="navbtns">
+                <button class="navbtn">Sign-up</button>
+                <button class="navbtn">About_Us</button>
+                <button class="navbtn">Manga</button>
+                <button class="navbtn">Anime</button>
+                <button class="navbtn">Home</button>
+            </div>
+            <button id="navmenu">
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+            </button>
         </nav>
     </header>
     <main class="abouttab">
@@ -235,32 +373,22 @@ function innerHTMLGenerator() {
         <nav>
             <img src="assets/imgs/logo.png" alt="Logo" />
             <h2>Weeb Web</h2>
-            <button class="navbtn">Sign-up</button>
-            <button class="navbtn">About_Us</button>
-            <button class="navbtn">Manga</button>
-            <button class="navbtn">Anime</button>
-            <button class="navbtn">Home</button>
+            <div class="navbtns">
+                <button class="navbtn">Sign-up</button>
+                <button class="navbtn">About_Us</button>
+                <button class="navbtn">Manga</button>
+                <button class="navbtn">Anime</button>
+                <button class="navbtn">Home</button>
+            </div>
+            <button id="navmenu">
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+                <div class="menudesign"></div>
+            </button>
         </nav>
     </header>
     <main class="signup">
-        <form action="" method="get" class="signup">
-            <div class="signup">
-                <label for="email">Email: </label>
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Gmail, etc" />
-            </div>
-            <div class="signup">
-                <label>
-                    Gender:
-                    <label for="male">Male </label>
-                    <input type="radio" name="gender" id="male" />
-                    <label for="female">Female </label>
-                    <input type="radio" name="gender" id="female" />
-                </label>
-            </div>
+        <div class="signup form" id="form">
             <div class="signup">
                 <label>
                     Name:
@@ -272,6 +400,15 @@ function innerHTMLGenerator() {
                         type="text"
                         name="lname"
                         placeholder="Last Name" />
+                </label>
+            </div>
+            <div class="signup">
+                <label>
+                    Gender:
+                    <label for="male">Male </label>
+                    <input type="radio" name="gender" id="male" />
+                    <label for="female">Female </label>
+                    <input type="radio" name="gender" id="female" />
                 </label>
             </div>
             <div class="signup main">
@@ -290,13 +427,41 @@ function innerHTMLGenerator() {
                     placeholder="Password"
                     required />
             </div>
-            <div class="signup btndiv">
-                <button type="reset" class="signupbtn reset">Fill Again</button>
-                <button type="submit" class="signupbtn submit">SignUp</button>
+            <div class="signup btndiv" id="btndiv">
+                <button class="signupbtn submit" onclick="signup()">SignUp</button>
             </div>
-        </form>
+        </div>
     </main>
     `;
+
+    this.pAniManHead = function (tab, name, eps) {
+        let container = document.createElement("button");
+        container.classList = `${tab} pAniManBtn`;
+        container.innerHTML = `
+            <h1 class="${tab}">${name}, </h1>
+            <h1 class="${tab}">${eps}</h1>
+        `;
+        return container;
+    };
+
+    this.pAniManContext = function (header, name, length, imgsrc, summary) {
+        let container = document.createElement("div");
+        container.id = "pAniManContextWin";
+        container.innerHTML = `
+        <div id="head">
+            <h1>${header}</h1>
+            <button onclick="this.parentElement.parentElement.remove()">X</button>
+        </div>
+        <div id="body">
+            <img src="${imgsrc}">
+            <h1>${name}</h1>
+            <h2>${length}</h2>
+            <h3>Description:</h3>
+            <h4>${summary}</h4>
+        </div>
+        `;
+        return container;
+    };
 }
 
 function eventDetector() {
@@ -305,8 +470,26 @@ function eventDetector() {
     });
 
     document.querySelectorAll(".animetabbtns").forEach((elem) => {
-        elem.addEventListener("click", () => anitabeventhadler(elem));
+        elem.addEventListener("click", quotegen);
     });
+
+    document.querySelectorAll(".pAniManBtn").forEach((elem) => {
+        elem.addEventListener("click", () => contextCard(elem));
+    });
+
+    document.getElementById('navmenu').addEventListener("click", () => {
+        let navbtn = document.querySelector('.navbtns')
+
+        if (navbtn.style.height == 0) {
+            navbtn.style = 'height: 10em;'
+        }
+        else if (navbtn.style.height == '0em') {
+            navbtn.style = 'height: 10em;'
+        }
+        else {
+        navbtn.style = 'height: 0em;'
+        }
+    })
 }
 
 eventDetector();
