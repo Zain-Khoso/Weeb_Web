@@ -1,0 +1,144 @@
+* {
+    margin: 0px;
+}
+body {
+    background-color: rgba(0, 0, 0, 0.926);
+}
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg) translate(0%, 0%);
+    }
+    100%{
+        transform: rotate(360deg) translate(0%, 0%);
+    }
+}
+@keyframes textVibrate {
+    0%{
+        transform: translateX(0em) translateY(-0.1em);
+    }
+    33%{
+        transform: translateX(-3em) translateY(-0.1em);
+    }
+    66%{
+        transform: translateX(3em) translateY(-0.1em);
+    }
+    100%{
+        transform: translateX(0em) translateY(-0.1em);
+    }
+}
+
+
+header {
+    width: 100%;
+    height: 5em;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+header img {
+    width: 4rem;
+    height: 4rem;
+    margin: 0.5rem 1rem;
+    animation: rotation 3s;
+}
+header h1 {
+    box-sizing: border-box;
+    width: fit-content;
+    height: fit-content;
+    font-size: 4em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translateY(-0.1em);
+    font-weight: 700;
+    color: aliceblue;
+    transition: font-size 1s, color 1s;
+    animation: textVibrate 5s;
+}
+header h1:hover {
+    cursor: pointer;
+    font-size: 5em;
+    color: aqua;
+    text-decoration-color: aqua;
+}
+#sidebarbtn {
+    width: 3em;
+    height: 3em;
+    border: none;
+    border-radius: 0.5rem;
+    outline: none;
+    transform: translate(-50%, 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: background-color 0.5s;
+}
+#sidebarbtn .design {
+    width: 100%;
+    height: 20%;
+    background-color: black;
+    border-radius: 1rem;
+    transform: translateX(1%);
+    transition: transform 1s, background-color 0.5s;
+}
+#sidebarbtn:hover {
+    background-color: black;
+}
+#sidebarbtn:hover .design{
+    background-color: white;
+    transform: rotate(-20deg);
+}
+
+#sidebar {
+    box-sizing: border-box;
+    width: 15rem;
+    height: 33.3rem;
+    background-color: rgba(31, 145, 244, 0.656);
+    padding: 1em;
+    border-left: 1px solid black;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#sidebar .navbtns {
+    box-sizing: border-box;
+    width: 100%;
+    height: fit-content;
+    font-size: x-large;
+    background-color: rgba(255, 255, 255, 0.144);
+    padding: 3px;
+    border: 1px solid black;
+    outline: none;
+}
+section {
+    padding-left: 1em;
+    margin-top: 2em;
+}
+section h1 {
+    width: fit-content;
+    font-size: 40px;
+    font-family: Arial, sans-serif;
+    color: rgba(38, 119, 218, 0.921);
+    text-decoration: underline;
+}
+section h3 {
+    width: 30em;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    margin-bottom: 2em;
+}
+section h3 button.navbtns {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    outline: none;
+    transition: color 1s;
+}
+section h3 button.navbtns:hover {
+    color: rgba(63, 199, 56, 0.709);
+    cursor: pointer;
+}
