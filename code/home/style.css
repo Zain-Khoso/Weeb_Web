@@ -14,16 +14,27 @@ body {
 }
 @keyframes textVibrate {
     0%{
-        transform: translateX(0em) translateY(-0.1em);
+        transform: translate(-20%, -0.1em);
     }
     33%{
-        transform: translateX(-3em) translateY(-0.1em);
+        transform: translate(-3em, -0.1em);
     }
     66%{
-        transform: translateX(3em) translateY(-0.1em);
+        transform: translate(3em, -0.1em);
     }
     100%{
-        transform: translateX(0em) translateY(-0.1em);
+        transform: translate(-20%, -0.1em);
+    }
+}
+@keyframes slides {
+    0% {
+        transform: translate(-50%, 50%);
+    }
+    50% {
+        transform: translate(-130%, 50%);
+    }
+    100% {
+        transform: translate(-50%, 50%);
     }
 }
 
@@ -32,6 +43,8 @@ header {
     width: 100%;
     height: 5em;
     background-color: black;
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
 }
@@ -47,11 +60,11 @@ header h1 {
     height: fit-content;
     font-size: 4em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transform: translateY(-0.1em);
+    transform: translate(-20%, -0.1em);
     font-weight: 700;
     color: aliceblue;
     transition: font-size 1s, color 1s;
-    animation: textVibrate 5s;
+    animation: textVibrate 3s ease-in-out;
 }
 header h1:hover {
     cursor: pointer;
@@ -65,11 +78,13 @@ header h1:hover {
     border: none;
     border-radius: 0.5rem;
     outline: none;
-    transform: translate(-50%, 50%);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    transition: background-color 0.5s;
+    animation: slides 2s infinite ease-in-out 100ms;
+}
+#sidebarbtn:hover {
+    animation-play-state: paused;
 }
 #sidebarbtn .design {
     width: 100%;
@@ -79,12 +94,11 @@ header h1:hover {
     transform: translateX(1%);
     transition: transform 1s, background-color 0.5s;
 }
-#sidebarbtn:hover {
-    background-color: black;
+#sidebarbtn .design:nth-child(1){
+    transform: rotate(-32deg) translate(-20%, 30%);
 }
-#sidebarbtn:hover .design{
-    background-color: white;
-    transform: rotate(-20deg);
+#sidebarbtn .design:nth-child(3){
+    transform: rotate(32deg) translate(-20%, -30%);
 }
 
 #sidebar {
@@ -94,7 +108,11 @@ header h1:hover {
     background-color: rgba(31, 145, 244, 0.656);
     padding: 1em;
     border-left: 1px solid black;
+    position: fixed;
+    top: 5rem;
+    right: -15rem;
     float: right;
+    transition: right 1s;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -104,10 +122,14 @@ header h1:hover {
     width: 100%;
     height: fit-content;
     font-size: x-large;
-    background-color: rgba(255, 255, 255, 0.144);
+    background-color: transparent;
     padding: 3px;
     border: 1px solid black;
     outline: none;
+}
+#sidebar .navbtns:hover {
+    background-color: rgba(255, 255, 255, 0.144);
+    outline: 1px solid white;
 }
 section {
     padding-left: 1em;
@@ -119,13 +141,19 @@ section h1 {
     font-family: Arial, sans-serif;
     color: rgba(38, 119, 218, 0.921);
     text-decoration: underline;
+    transition: font-size 2s, color 2s;
+}
+section h1:hover{
+    cursor: default;
+    font-size: 45px;
+    color: aquamarine;
 }
 section h3 {
     width: 30em;
     font-size: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
-    margin-bottom: 2em;
+    margin: 0.5em 0em 2em 0em;
 }
 section h3 button.navbtns {
     width: fit-content;
