@@ -7,53 +7,58 @@
 
         <link
             rel="shortcut icon"
-            href="assets/imgs/favicon.png"
+            href="/assets/imgs/favicon.png"
             type="image/x-icon" />
-        <link rel="stylesheet" href="style.css" />
-        <script defer src="script.js"></script>
-
+        <link rel="stylesheet" href="/code/home/style.css"/>
+        <script defer src="/code/home/script.js"></script>
         <title>Weeb Web</title>
     </head>
-
     <body>
         <header>
-            <nav>
-                <img src="assets/imgs/logo.png" alt="Logo" />
-                <h2>Weeb Web</h2>
-                <button id="navmenu">
-                    <div class="menudesign"></div>
-                    <div class="menudesign"></div>
-                    <div class="menudesign"></div>
-                </button>
-                <div class="navbtns">
-                    <button class="navbtn">Sign-up</button>
-                    <button class="navbtn">About_Us</button>
-                    <button class="navbtn">Manga</button>
-                    <button class="navbtn">Anime</button>
-                    <button class="navbtn">Home</button>
-                </div>
-            </nav>
+            <img src="/assets/imgs/logo.png" alt="Logo" />
+            <h1>Home</h1>
+            <button id="sidebarbtn">
+                <div class="design"></div>
+                <div class="design"></div>
+                <div class="design"></div>
+            </button>
         </header>
-        <main class="hometab">
-            <h1 class="hometab">What is this?</h1>
-            <h3 class="hometab">This Site is a Web of Weebs.</h3>
 
-            <h1 class="hometab">Who is a Weeb?</h1>
-            <h3 class="hometab">
-                Uncle Google says &nbsp;&nbsp;&nbsp;"A weeb is a derisive term
-                for a non-Japanese person who is so obsessed with Japanese
-                culture that they wish they were actually Japanese.".
-            </h3>
+        <div id="sidebar">
+            <button class="navbtns">Home</button>
+            <button class="navbtns">Anime</button>
+            <button class="navbtns">Manga</button>
+            <button class="navbtns">About-Us</button>
+            <button class="navbtns">Sign-up</button>
+        </div>
 
-            <h1 class="hometab">More Down Blow</h1>
-            <h3 class="hometab">
-                On this site you'll find, Where to Watch Anime, Where to Read
-                Manga, Memes(about Anime & Manga), More Weebs like your self,
-                Anime & Manga Discussions, Anime & Manga Suggestions. And Much
-                More. May you have a good time with us. Find more about
-                <button class="navbtn hometab"><i>Anime</i></button> and 
-                <button class="navbtn hometab"><i>Manga</i></button>.
-            </h3>
+        <main>
+            <section>
+                <h1>What is this?</h1>
+                <h3>This Site is a Web of Weebs.</h3>
+            </section>
+
+            <section>
+                <h1>Who is a Weeb?</h1>
+                <h3>
+                    A weeb is a derisive term for a non-Japanese person who is
+                    so obsessed with Japanese culture that they wish they were
+                    actually Japanese.
+                </h3>
+            </section>
+
+            <section>
+                <h1>More Down Blow</h1>
+                <h3>
+                    On this site you'll find, Where to Watch Anime, Where to
+                    Read Manga, Memes(about Anime & Manga), More Weebs like your
+                    self, Anime & Manga Discussions, Anime & Manga Suggestions.
+                    And Much More. May you have a good time with us. Find more
+                    about
+                    <button class="navbtns"><i>Anime</i></button> and
+                    <button class="navbtns"><i>Manga</i></button>.
+                </h3>
+            </section>
         </main>
     </body>
 </html>

@@ -1,7 +1,7 @@
 function pageLoader(node) {
     switch (node.textContent) {
         case "Home":
-            open('/code/home/index.html', '_self')
+            open('/index.html', '_self')
             break
         case "Anime":
             open('/code/anime/index.html', '_self')
