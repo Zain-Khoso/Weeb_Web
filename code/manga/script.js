@@ -39,7 +39,7 @@ function nodeGen() {
         <div id="body">
             <img src="${img}">
             <h1>${name}</h1>
-            <h2>Episodes: ${vols}</h2>
+            <h2>Volumes: ${vols}</h2>
             <h3>Discription: </h3>
             <p>${disc}</p>
         </div>
@@ -67,16 +67,21 @@ async function popularMangas() {
 }
 
 async function mangaDetails(node) {
-    const database = await (await fetch("/assets/data/mangas.json")).json();
-    const manga = node.children[0].textContent.replace(",", "");
-    const data = database.find((elem) => elem["name"] == manga);
-    new nodeGen().mangaCard(
-        data.name,
-        data.volumes,
-        data.img,
-        data.description
-    );
+    try {
+        const database = await (await fetch("/assets/data/mangas.json")).json();
+        const manga = node.children[0].textContent.replace(",", "");
+        const data = database.find((elem) => elem["name"] == manga);
+        new nodeGen().mangaCard(
+            data.name,
+            data.volumes,
+            data.img,
+            data.description
+        );
+    } catch (error) {
+        return;
+    }
 }
+
 
 document.querySelectorAll(".navbtns").forEach((elem) => {
     elem.addEventListener("click", () => {
@@ -95,9 +100,8 @@ document.getElementById("sidebarbtn").addEventListener("click", () => {
     navbar.style.right = "-50rem";
 });
 
-
 popularMangas().then(() => {
-    document.querySelectorAll("#animelist h3 button").forEach((elem) => {
+    document.querySelectorAll("#mangalist h3 button").forEach((elem) => {
         elem.addEventListener("click", () => mangaDetails(elem));
     });
 });

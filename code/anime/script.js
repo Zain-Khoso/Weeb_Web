@@ -67,23 +67,32 @@ async function popularAnimes() {
 }
 
 async function animeDetails(node) {
-    const database = await (await fetch("/assets/data/animes.json")).json();
-    const anime = node.children[0].textContent.replace(",", "");
-    const data = database.find((elem) => elem["name"] == anime);
-    new nodeGen().animeCard(
-        data.name,
-        data.episode,
-        data.img,
-        data.description
-    );
+    try {
+        const database = await (await fetch("/assets/data/animes.json")).json();
+        const anime = node.children[0].textContent.replace(",", "");
+        const data = database.find((elem) => elem["name"] == anime);
+        new nodeGen().animeCard(
+            data.name,
+            data.episode,
+            data.img,
+            data.description
+        );
+    } catch (error) {
+        return;
+    }
 }
 
 async function quotes() {
-    const container = document.querySelector("#quotes h3");
-    const qot = await (
-        await fetch("https://animechan.vercel.app/api/random")
-    ).json();
-    container.textContent = `"${qot["quote"]}", ~~${qot["character"]}~~ from ${qot["anime"]}`;
+    try {
+        const container = document.querySelector("#quotes h3");
+        const qot = await (
+            await fetch("https://animechan.vercel.app/api/random")
+        ).json();
+        container.textContent = `"${qot["quote"]}", ~~${qot["character"]}~~ from ${qot["anime"]}`;
+    } catch (error) {
+        document.querySelector("#quotes h3").textContent =
+            "Sorry, something came up and we are currently fixing it.";
+    }
 }
 
 document.querySelectorAll(".navbtns").forEach((elem) => {
