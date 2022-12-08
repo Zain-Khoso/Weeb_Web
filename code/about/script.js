@@ -1,7 +1,7 @@
 function pageLoader(node) {
     switch (node.textContent) {
         case "Home":
-            open('/index.html', '_self')
+            open("/index.html", "_self");
             break;
         case "Anime":
             open("/code/anime/index.html", "_self");
@@ -27,10 +27,10 @@ document.querySelectorAll(".navbtns").forEach((elem) => {
 document.getElementById("sidebarbtn").addEventListener("click", () => {
     let navbar = document.getElementById("sidebar");
 
-    if (navbar.style.right == 0 || navbar.style.right == "-15rem") {
+    if (navbar.style.right == 0 || navbar.style.right == "-50rem") {
         navbar.style = `right: 0rem`;
         return;
     }
 
-    navbar.style.right = "-15rem";
+    navbar.style.right = "-50rem";
 });
