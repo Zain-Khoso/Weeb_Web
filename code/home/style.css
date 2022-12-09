@@ -1,0 +1,464 @@
+::root {
+    height: 100%;
+}
+
+* {
+    margin: 0px;
+}
+body {
+    background-color: rgba(0, 0, 0, 0.926);
+    height: 100%;
+}
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg) translate(0%, 0%);
+    }
+    100%{
+        transform: rotate(360deg) translate(0%, 0%);
+    }
+}
+@keyframes slidesL {
+    0% {
+        transform: translate(-50%, 50%);
+    }
+    50% {
+        transform: translate(-130%, 50%);
+    }
+    100% {
+        transform: translate(-50%, 50%);
+    }
+}
+@keyframes slidesS {
+    0% {
+        transform: translate(-50%, 30%);
+    }
+    50% {
+        transform: translate(-100%, 30%);
+    }
+    100% {
+        transform: translate(-50%, 30%);
+    }
+}
+
+@keyframes textVibrateL {
+    0%{
+        transform: translate(-20%, -0.1em);
+    }
+    33%{
+        transform: translate(-3em, -0.1em);
+    }
+    66%{
+        transform: translate(3em, -0.1em);
+    }
+    100%{
+        transform: translate(-20%, -0.1em);
+    }
+}
+@keyframes textVibrateM {
+    0%{
+        transform: translate(-20%, -0.1em);
+    }
+    33%{
+        transform: translate(-1.5em, -0.1em);
+    }
+    66%{
+        transform: translate(1.5em, -0.1em);
+    }
+    100%{
+        transform: translate(-20%, -0.1em);
+    }
+}
+@keyframes textVibrateS {
+    0%{
+        transform: translate(-20%, 0.1em);
+    }
+    33%{
+        transform: translate(-1.5em, 0.1em);
+    }
+    66%{
+        transform: translate(0.5em, 0.1em);
+    }
+    100%{
+        transform: translate(-20%, 0.1em);
+    }
+}
+
+@media only screen and (min-width: 1150px){
+    header {
+        width: 100%;
+        height: 5em;
+        background-color: black;
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    header img {
+        width: 4rem;
+        height: 4rem;
+        margin: 0.5rem 1rem;
+        animation: rotation 3s;
+    }
+    header h1 {
+        box-sizing: border-box;
+        width: fit-content;
+        height: fit-content;
+        font-size: 4em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transform: translate(-20%, -0.1em);
+        font-weight: 700;
+        color: aliceblue;
+        transition: font-size 1s, color 1s;
+        animation: textVibrateL 3s ease-in-out;
+    }
+    header h1:hover {
+        cursor: pointer;
+        font-size: 5em;
+        color: aqua;
+        text-decoration-color: aqua;
+    }
+    #sidebarbtn {
+        width: 3em;
+        height: 3em;
+        border: none;
+        border-radius: 0.5rem;
+        outline: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        animation: slidesL 2s infinite ease-in-out 100ms;
+    }
+    #sidebarbtn:hover {
+        animation-play-state: paused;
+    }
+    #sidebarbtn .design {
+        width: 100%;
+        height: 20%;
+        background-color: black;
+        border-radius: 1rem;
+        transform: translateX(1%);
+        transition: transform 1s, background-color 0.5s;
+    }
+    #sidebarbtn .design:nth-child(1){
+        transform: rotate(-32deg) translate(-20%, 30%);
+    }
+    #sidebarbtn .design:nth-child(3){
+        transform: rotate(32deg) translate(-20%, -30%);
+    }
+    
+    #sidebar {
+        box-sizing: border-box;
+        width: 20%;
+        height: 100%;
+        background-color: rgb(22, 115, 196);
+        padding: 1em;
+        padding-bottom: 5em;
+        border-left: 1px solid black;
+        position: fixed;
+        top: 5rem;
+        right: -50rem;
+        float: right;
+        transition: right 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #sidebar .navbtns {
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        font-size: x-large;
+        background-color: transparent;
+        padding: 3px;
+        border: 1px solid black;
+        outline: none;
+    }
+    #sidebar .navbtns:hover {
+        background-color: rgba(255, 255, 255, 0.144);
+        outline: 1px solid white;
+    }
+    section {
+        padding-left: 1em;
+        margin-top: 2em;
+    }
+    section h1 {
+        width: fit-content;
+        font-size: 40px;
+        font-family: Arial, sans-serif;
+        color: rgba(38, 119, 218, 0.921);
+        text-decoration: underline;
+        transition: font-size 2s, color 2s;
+    }
+    section h1:hover{
+        cursor: default;
+        font-size: 45px;
+        color: aquamarine;
+    }
+    section h3 {
+        width: 30em;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+        margin: 0.5em 0em 2em 0em;
+    }
+    section h3 button.navbtns {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: none;
+        outline: none;
+        transition: color 1s;
+    }
+    section h3 button.navbtns:hover {
+        color: rgba(63, 199, 56, 0.709);
+        cursor: pointer;
+    }
+}
+@media only screen and (min-width: 550px) and (max-width: 1200px){
+    header {
+        width: 100%;
+        height: 5em;
+        background-color: black;
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    header img {
+        width: 4rem;
+        height: 4rem;
+        margin: 0.5rem 1rem;
+        animation: rotation 3s;
+    }
+    header h1 {
+        box-sizing: border-box;
+        width: fit-content;
+        height: fit-content;
+        font-size: 4em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transform: translate(-20%, -0.1em);
+        font-weight: 700;
+        color: aliceblue;
+        transition: font-size 1s, color 1s;
+        animation: textVibrateM 3s ease-in-out;
+    }
+    header h1:hover {
+        cursor: pointer;
+        font-size: 5em;
+        color: aqua;
+        text-decoration-color: aqua;
+    }
+    #sidebarbtn {
+        width: 3em;
+        height: 3em;
+        border: none;
+        border-radius: 0.5rem;
+        outline: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        animation: slidesL 2s infinite ease-in-out 100ms;
+    }
+    #sidebarbtn:hover {
+        animation-play-state: paused;
+    }
+    #sidebarbtn .design {
+        width: 100%;
+        height: 20%;
+        background-color: black;
+        border-radius: 1rem;
+        transform: translateX(1%);
+        transition: transform 1s, background-color 0.5s;
+    }
+    #sidebarbtn .design:nth-child(1){
+        transform: rotate(-32deg) translate(-20%, 30%);
+    }
+    #sidebarbtn .design:nth-child(3){
+        transform: rotate(32deg) translate(-20%, -30%);
+    }
+    
+    #sidebar {
+        box-sizing: border-box;
+        width: 40%;
+        height: 100%;
+        background-color: rgb(26, 125, 212);
+        padding: 1em;
+        padding-bottom: 5em;
+        border-left: 1px solid black;
+        position: fixed;
+        top: 5rem;
+        right: -50rem;
+        float: right;
+        transition: right 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #sidebar .navbtns {
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        font-size: x-large;
+        background-color: transparent;
+        padding: 3px;
+        border: 1px solid black;
+        outline: none;
+    }
+    #sidebar .navbtns:hover {
+        background-color: rgba(255, 255, 255, 0.144);
+        outline: 1px solid white;
+    }
+    section {
+        padding-left: 0.5em;
+        margin-top: 2em;
+    }
+    section h1 {
+        width: fit-content;
+        font-size: 30px;
+        font-family: Arial, sans-serif;
+        color: rgba(38, 119, 218, 0.921);
+        text-decoration: underline;
+        transition: font-size 2s, color 2s;
+    }
+    section h1:hover{
+        cursor: default;
+        font-size: 35px;
+        color: aquamarine;
+    }
+    section h3 {
+        width: 20em;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+        margin: 0.5em 0em 2em 0em;
+    }
+    section h3 button.navbtns {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: none;
+        outline: none;
+        transition: color 1s;
+    }
+    section h3 button.navbtns:hover {
+        color: rgba(63, 199, 56, 0.709);
+        cursor: pointer;
+    }
+}
+@media only screen and (max-width: 570px){
+    header {
+        width: 100%;
+        height: 4em;
+        background-color: black;
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    header img {
+        width: 3rem;
+        height: 3rem;
+        margin: 0.5rem 1rem;
+        animation: rotation 3s;
+    }
+    header h1 {
+        box-sizing: border-box;
+        width: fit-content;
+        height: fit-content;
+        font-size: 2.5em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transform: translate(-20%, 0.1em);
+        font-weight: 700;
+        color: aliceblue;
+        transition: font-size 1s, color 1s;
+        animation: textVibrateS 2s ease-in-out;
+    }
+    #sidebarbtn {
+        width: 3em;
+        height: 3em;
+        border: none;
+        border-radius: 0.5rem;
+        outline: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        animation: slidesS 2s infinite ease-in-out 100ms;
+    }
+    #sidebarbtn .design {
+        width: 100%;
+        height: 20%;
+        background-color: black;
+        border-radius: 1rem;
+        transform: translateX(1%);
+        transition: transform 1s, background-color 0.5s;
+    }
+    #sidebarbtn .design:nth-child(1){
+        transform: rotate(-32deg) translate(-20%, 30%);
+    }
+    #sidebarbtn .design:nth-child(3){
+        transform: rotate(32deg) translate(-20%, -30%);
+    }
+    
+    #sidebar {
+        box-sizing: border-box;
+        width: 60%;
+        height: 100%;
+        background-color: rgb(31, 145, 244);
+        padding: 1em;
+        padding-bottom: 5em;
+        border-left: 1px solid black;
+        position: fixed;
+        top: 4rem;
+        right: -50rem;
+        float: right;
+        transition: right 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #sidebar .navbtns {
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        font-size: x-large;
+        background-color: transparent;
+        padding: 3px;
+        border: 1px solid black;
+        outline: none;
+    }
+    section {
+        padding-left: 0.3em;
+        margin-top: 1em;
+    }
+    section h1 {
+        width: fit-content;
+        font-size: 30px;
+        font-family: Arial, sans-serif;
+        color: rgba(38, 119, 218, 0.921);
+        text-decoration: underline;
+        transition: font-size 2s, color 2s;
+    }
+    section h3 {
+        width: 100%;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+        margin: 0.5em 0em 2em 0em;
+    }
+    section h3 button.navbtns {
+        width: fit-content;
+        height: fit-content;
+        background-color: transparent;
+        color: rgba(22, 238, 76, 0.666);
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: none;
+        outline: none;
+    }
+}
