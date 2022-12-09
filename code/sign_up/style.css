@@ -1,32 +1,26 @@
+::root {
+    height: 100%;
+}
+::placeholder {
+    color: rgba(0, 0, 0, 0.713);
+}
+
 * {
     margin: 0px;
 }
 body {
     background-color: rgba(0, 0, 0, 0.926);
+    height: 100%;
 }
 @keyframes rotation {
-    0% {
+    0%{
         transform: rotate(0deg) translate(0%, 0%);
     }
-    100% {
+    100%{
         transform: rotate(360deg) translate(0%, 0%);
     }
 }
-@keyframes textVibrate {
-    0% {
-        transform: translate(-20%, -0.1em);
-    }
-    33% {
-        transform: translate(-3em, -0.1em);
-    }
-    66% {
-        transform: translate(3em, -0.1em);
-    }
-    100% {
-        transform: translate(-20%, -0.1em);
-    }
-}
-@keyframes slides {
+@keyframes slidesL {
     0% {
         transform: translate(-50%, 50%);
     }
@@ -37,96 +31,769 @@ body {
         transform: translate(-50%, 50%);
     }
 }
-
-header {
-    width: 100%;
-    height: 5em;
-    background-color: black;
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-}
-header img {
-    width: 4rem;
-    height: 4rem;
-    margin: 0.5rem 1rem;
-    animation: rotation 3s;
-}
-header h1 {
-    box-sizing: border-box;
-    width: fit-content;
-    height: fit-content;
-    font-size: 4em;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    transform: translate(-20%, -0.1em);
-    font-weight: 700;
-    color: aliceblue;
-    transition: font-size 1s, color 1s;
-    animation: textVibrate 3s ease-in-out;
-}
-header h1:hover {
-    cursor: pointer;
-    font-size: 5em;
-    color: aqua;
-    text-decoration-color: aqua;
-}
-#sidebarbtn {
-    width: 3em;
-    height: 3em;
-    border: none;
-    border-radius: 0.5rem;
-    outline: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    animation: slides 2s infinite ease-in-out 100ms;
-}
-#sidebarbtn:hover {
-    animation-play-state: paused;
-}
-#sidebarbtn .design {
-    width: 100%;
-    height: 20%;
-    background-color: black;
-    border-radius: 1rem;
-    transform: translateX(1%);
-    transition: transform 1s, background-color 0.5s;
-}
-#sidebarbtn .design:nth-child(1) {
-    transform: rotate(-32deg) translate(-20%, 30%);
-}
-#sidebarbtn .design:nth-child(3) {
-    transform: rotate(32deg) translate(-20%, -30%);
+@keyframes slidesS {
+    0% {
+        transform: translate(-50%, 30%);
+    }
+    50% {
+        transform: translate(-100%, 30%);
+    }
+    100% {
+        transform: translate(-50%, 30%);
+    }
 }
 
-#sidebar {
-    box-sizing: border-box;
-    width: 15rem;
-    height: 33.3rem;
-    background-color: rgba(31, 145, 244, 0.656);
-    padding: 1em;
-    border-left: 1px solid black;
-    position: fixed;
-    top: 5rem;
-    right: -15rem;
-    float: right;
-    transition: right 1s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+@keyframes textVibrateL {
+    0%{
+        transform: translate(-20%, -0.1em);
+    }
+    33%{
+        transform: translate(-3em, -0.1em);
+    }
+    66%{
+        transform: translate(3em, -0.1em);
+    }
+    100%{
+        transform: translate(-20%, -0.1em);
+    }
 }
-#sidebar .navbtns {
-    box-sizing: border-box;
-    width: 100%;
-    height: fit-content;
-    font-size: x-large;
-    background-color: transparent;
-    padding: 3px;
-    border: 1px solid black;
-    outline: none;
+@keyframes textVibrateM {
+    0%{
+        transform: translate(-20%, -0.1em);
+    }
+    33%{
+        transform: translate(-1.5em, -0.1em);
+    }
+    66%{
+        transform: translate(1.5em, -0.1em);
+    }
+    100%{
+        transform: translate(-20%, -0.1em);
+    }
 }
-#sidebar .navbtns:hover {
-    background-color: rgba(255, 255, 255, 0.144);
-    outline: 1px solid white;
+@keyframes textVibrateS {
+    0%{
+        transform: translate(-20%, 0.1em);
+    }
+    33%{
+        transform: translate(-1.5em, 0.1em);
+    }
+    66%{
+        transform: translate(0.5em, 0.1em);
+    }
+    100%{
+        transform: translate(-20%, 0.1em);
+    }
+}
+
+@media only screen and (min-width: 1150px){
+    header {
+        width: 100%;
+        height: 5em;
+        background-color: black;
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    header img {
+        width: 4rem;
+        height: 4rem;
+        margin: 0.5rem 1rem;
+        animation: rotation 3s;
+    }
+    header h1 {
+        box-sizing: border-box;
+        width: fit-content;
+        height: fit-content;
+        font-size: 4em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transform: translate(-20%, -0.1em);
+        font-weight: 700;
+        color: aliceblue;
+        transition: font-size 1s, color 1s;
+        animation: textVibrateL 3s ease-in-out;
+    }
+    header h1:hover {
+        cursor: pointer;
+        font-size: 5em;
+        color: aqua;
+        text-decoration-color: aqua;
+    }
+    #sidebarbtn {
+        width: 3em;
+        height: 3em;
+        border: none;
+        border-radius: 0.5rem;
+        outline: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        animation: slidesL 2s infinite ease-in-out 100ms;
+    }
+    #sidebarbtn:hover {
+        animation-play-state: paused;
+    }
+    #sidebarbtn .design {
+        width: 100%;
+        height: 20%;
+        background-color: black;
+        border-radius: 1rem;
+        transform: translateX(1%);
+        transition: transform 1s, background-color 0.5s;
+    }
+    #sidebarbtn .design:nth-child(1){
+        transform: rotate(-32deg) translate(-20%, 30%);
+    }
+    #sidebarbtn .design:nth-child(3){
+        transform: rotate(32deg) translate(-20%, -30%);
+    }
+    
+    #sidebar {
+        box-sizing: border-box;
+        width: 20%;
+        height: 100%;
+        background-color: rgb(22, 115, 196);
+        padding: 1em;
+        padding-bottom: 5em;
+        border-left: 1px solid black;
+        position: fixed;
+        top: 5rem;
+        right: -50rem;
+        float: right;
+        transition: right 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        z-index: 1;
+    }
+    #sidebar .navbtns {
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        font-size: x-large;
+        background-color: transparent;
+        padding: 3px;
+        border: 1px solid black;
+        outline: none;
+    }
+    #sidebar .navbtns:hover {
+        background-color: rgba(255, 255, 255, 0.144);
+        outline: 1px solid white;
+    }
+    main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #body {
+        box-sizing: border-box;
+        box-shadow: 0px 0px 20px white;
+        width: 20rem;
+        height: fit-content;
+        background: rgb(0,255,247);
+        background: linear-gradient(125deg, rgb(0, 255, 200) 12%, rgb(72, 182, 255) 72%);
+        padding: 0.5em;
+        border: 1px solid white;
+        border-radius: 1em;
+        margin-top: 3.5rem;
+        overflow: hidden;
+    }
+    #header {
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 10px;
+        border: none;
+        border-bottom: 1px solid black;
+        margin: none;
+        margin-bottom: 1em;
+    }
+    #header h1 {
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 900;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        letter-spacing: 5px;
+        margin-bottom: 0.3em;
+    }
+    #header div {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+    }
+    #header div button {
+        width: 6rem;
+        height: 2.5rem;
+        font-size: large;
+        border: none;
+        outline: none;
+    }
+    #header div button:nth-child(1) {
+        background-color: rgb(65, 174, 247);
+        border: 1px solid black;
+        border-top-left-radius: 0.8em;
+        border-bottom-left-radius: 0.8em;
+        transition: background-color 500ms;          
+    }
+    #header div button:nth-child(2) {
+        background-color: rgb(20, 94, 144);
+        border: none;
+        border-top-right-radius: 0.8em;
+        border-bottom-right-radius: 0.8em;
+        transition: background-color 500ms;    
+    }
+    #sign {
+        width: 100%;
+        height: 16em;
+        display: flex;
+        flex-direction: column;
+    }
+    #sign section {
+        margin-bottom: 0.5em;
+        display: flex;
+        align-items: center;
+    }
+    #sign label{
+        font-size: x-large;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-right: 5px;
+    }
+    #sign input {
+        box-sizing: border-box;
+        width: 100%;
+        height: 2.5em;
+        font-size: 15px;
+        background-color: rgb(254, 223, 84);
+        border: 1px solid black;
+        outline: none;
+    }
+    #sign section:nth-child(3) input {
+        width: 7em;
+    }
+    #sign section:nth-child(2) input {
+        width: fit-content;
+        height: fit-content;
+    }
+    #sign #logger {
+        box-sizing: border-box;
+        box-shadow: 0px 0px 30px white;
+        width: 100%;
+        height: 2em;
+        font-size: large;
+        background-color: rgb(101, 255, 98);
+        border: 1px solid black;
+        border-radius: 0.5em;
+
+    }
+    #log {
+        width: 100%;
+        height: 8em;
+        display: flex;
+        flex-direction: column;
+    }
+    #log section {
+        margin-bottom: 0.5em;
+        display: flex;
+        align-items: center;
+    }
+    #log label{
+        font-size: x-large;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-right: 5px;
+    }
+    #log input {
+        box-sizing: border-box;
+        width: 100%;
+        height: 2.5em;
+        font-size: 15px;
+        background-color: rgb(57, 255, 116);
+        border: 1px solid black;
+        outline: none;
+    }
+    #log #logger {
+        box-sizing: border-box;
+        box-shadow: 0px 0px 30px white;
+        width: 100%;
+        height: 2em;
+        font-size: large;
+        background-color: rgb(51, 255, 0);
+        border: 1px solid black;
+        border-radius: 0.5em;
+
+    }
+}
+@media only screen and (min-width: 550px) and (max-width: 1200px){
+    header {
+        width: 100%;
+        height: 5em;
+        background-color: black;
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    header img {
+        width: 4rem;
+        height: 4rem;
+        margin: 0.5rem 1rem;
+        animation: rotation 3s;
+    }
+    header h1 {
+        box-sizing: border-box;
+        width: fit-content;
+        height: fit-content;
+        font-size: 4em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transform: translate(-20%, -0.1em);
+        font-weight: 700;
+        color: aliceblue;
+        transition: font-size 1s, color 1s;
+        animation: textVibrateM 3s ease-in-out;
+    }
+    header h1:hover {
+        cursor: pointer;
+        font-size: 5em;
+        color: aqua;
+        text-decoration-color: aqua;
+    }
+    #sidebarbtn {
+        width: 3em;
+        height: 3em;
+        border: none;
+        border-radius: 0.5rem;
+        outline: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        animation: slidesL 2s infinite ease-in-out 100ms;
+    }
+    #sidebarbtn:hover {
+        animation-play-state: paused;
+    }
+    #sidebarbtn .design {
+        width: 100%;
+        height: 20%;
+        background-color: black;
+        border-radius: 1rem;
+        transform: translateX(1%);
+        transition: transform 1s, background-color 0.5s;
+    }
+    #sidebarbtn .design:nth-child(1){
+        transform: rotate(-32deg) translate(-20%, 30%);
+    }
+    #sidebarbtn .design:nth-child(3){
+        transform: rotate(32deg) translate(-20%, -30%);
+    }
+    
+    #sidebar {
+        box-sizing: border-box;
+        width: 40%;
+        height: 100%;
+        background-color: rgb(26, 125, 212);
+        padding: 1em;
+        padding-bottom: 5em;
+        border-left: 1px solid black;
+        position: fixed;
+        top: 5rem;
+        right: -50rem;
+        float: right;
+        transition: right 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #sidebar .navbtns {
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        font-size: x-large;
+        background-color: transparent;
+        padding: 3px;
+        border: 1px solid black;
+        outline: none;
+    }
+    #sidebar .navbtns:hover {
+        background-color: rgba(255, 255, 255, 0.144);
+        outline: 1px solid white;
+    }
+    main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #body {
+        box-sizing: border-box;
+        box-shadow: 0px 0px 20px white;
+        width: 20rem;
+        height: fit-content;
+        background: rgb(0,255,247);
+        background: linear-gradient(125deg, rgb(0, 255, 200) 12%, rgb(72, 182, 255) 72%);
+        padding: 0.5em;
+        border: 1px solid white;
+        border-radius: 1em;
+        margin-top: 3.5rem;
+        overflow: hidden;
+    }
+    #header {
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 10px;
+        border: none;
+        border-bottom: 1px solid black;
+        margin: none;
+        margin-bottom: 1em;
+    }
+    #header h1 {
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 900;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        letter-spacing: 5px;
+        margin-bottom: 0.3em;
+    }
+    #header div {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+    }
+    #header div button {
+        width: 6rem;
+        height: 2.5rem;
+        font-size: large;
+        border: none;
+        outline: none;
+    }
+    #header div button:nth-child(1) {
+        background-color: rgb(65, 174, 247);
+        border: 1px solid black;
+        border-top-left-radius: 0.8em;
+        border-bottom-left-radius: 0.8em;
+        transition: background-color 500ms;          
+    }
+    #header div button:nth-child(2) {
+        background-color: rgb(20, 94, 144);
+        border: none;
+        border-top-right-radius: 0.8em;
+        border-bottom-right-radius: 0.8em;
+        transition: background-color 500ms;    
+    }
+    #sign {
+        width: 100%;
+        height: 16em;
+        display: flex;
+        flex-direction: column;
+    }
+    #sign section {
+        margin-bottom: 0.5em;
+        display: flex;
+        align-items: center;
+    }
+    #sign label{
+        font-size: x-large;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-right: 5px;
+    }
+    #sign input {
+        box-sizing: border-box;
+        width: 100%;
+        height: 2.5em;
+        font-size: 15px;
+        background-color: rgb(254, 223, 84);
+        border: 1px solid black;
+        outline: none;
+    }
+    #sign section:nth-child(3) input {
+        width: 7em;
+    }
+    #sign section:nth-child(2) input {
+        width: fit-content;
+        height: fit-content;
+    }
+    #sign #logger {
+        box-sizing: border-box;
+        box-shadow: 0px 0px 30px white;
+        width: 100%;
+        height: 2em;
+        font-size: large;
+        background-color: rgb(101, 255, 98);
+        border: 1px solid black;
+        border-radius: 0.5em;
+
+    }
+    #log {
+        width: 100%;
+        height: 8em;
+        display: flex;
+        flex-direction: column;
+    }
+    #log section {
+        margin-bottom: 0.5em;
+        display: flex;
+        align-items: center;
+    }
+    #log label{
+        font-size: x-large;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-right: 5px;
+    }
+    #log input {
+        box-sizing: border-box;
+        width: 100%;
+        height: 2.5em;
+        font-size: 15px;
+        background-color: rgb(57, 255, 116);
+        border: 1px solid black;
+        outline: none;
+    }
+    #log #logger {
+        box-sizing: border-box;
+        box-shadow: 0px 0px 30px white;
+        width: 100%;
+        height: 2em;
+        font-size: large;
+        background-color: rgb(51, 255, 0);
+        border: 1px solid black;
+        border-radius: 0.5em;
+
+    }
+}
+@media only screen and (max-width: 570px){
+    header {
+        width: 100%;
+        height: 4em;
+        background-color: black;
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    header img {
+        width: 3rem;
+        height: 3rem;
+        margin: 0.5rem 1rem;
+        animation: rotation 3s;
+    }
+    header h1 {
+        box-sizing: border-box;
+        width: fit-content;
+        height: fit-content;
+        font-size: 2.5em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transform: translate(-20%, 0.1em);
+        font-weight: 700;
+        color: aliceblue;
+        transition: font-size 1s, color 1s;
+        animation: textVibrateS 2s ease-in-out;
+    }
+    #sidebarbtn {
+        width: 3em;
+        height: 3em;
+        border: none;
+        border-radius: 0.5rem;
+        outline: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        animation: slidesS 2s infinite ease-in-out 100ms;
+    }
+    #sidebarbtn .design {
+        width: 100%;
+        height: 20%;
+        background-color: black;
+        border-radius: 1rem;
+        transform: translateX(1%);
+        transition: transform 1s, background-color 0.5s;
+    }
+    #sidebarbtn .design:nth-child(1){
+        transform: rotate(-32deg) translate(-20%, 30%);
+    }
+    #sidebarbtn .design:nth-child(3){
+        transform: rotate(32deg) translate(-20%, -30%);
+    }
+    
+    #sidebar {
+        box-sizing: border-box;
+        width: 60%;
+        height: 100%;
+        background-color: rgb(31, 145, 244);
+        padding: 1em;
+        padding-bottom: 5em;
+        border-left: 1px solid black;
+        position: fixed;
+        top: 4rem;
+        right: -50rem;
+        float: right;
+        transition: right 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #sidebar .navbtns {
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        font-size: x-large;
+        background-color: transparent;
+        padding: 3px;
+        border: 1px solid black;
+        outline: none;
+    }
+    main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #body {
+        box-sizing: border-box;
+        box-shadow: 0px 0px 20px white;
+        width: 18rem;
+        height: fit-content;
+        background: rgb(0,255,247);
+        background: linear-gradient(125deg, rgb(0, 255, 200) 12%, rgb(72, 182, 255) 72%);
+        padding: 0.5em;
+        border: 1px solid white;
+        border-radius: 1em;
+        margin-top: 3.5rem;
+        overflow: hidden;
+    }
+    #header {
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 10px;
+        border: none;
+        border-bottom: 1px solid black;
+        margin: none;
+        margin-bottom: 1em;
+    }
+    #header h1 {
+        box-sizing: border-box;
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 900;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        letter-spacing: 5px;
+        margin-bottom: 0.3em;
+    }
+    #header div {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+    }
+    #header div button {
+        width: 6rem;
+        height: 2.5rem;
+        font-size: large;
+        border: none;
+        outline: none;
+    }
+    #header div button:nth-child(1) {
+        background-color: rgb(65, 174, 247);
+        border: 1px solid black;
+        border-top-left-radius: 0.8em;
+        border-bottom-left-radius: 0.8em;
+        transition: background-color 500ms;          
+    }
+    #header div button:nth-child(2) {
+        background-color: rgb(20, 94, 144);
+        border: none;
+        border-top-right-radius: 0.8em;
+        border-bottom-right-radius: 0.8em;
+        transition: background-color 500ms;    
+    }
+    #sign {
+        width: 100%;
+        height: 16em;
+        display: flex;
+        flex-direction: column;
+    }
+    #sign section {
+        margin-bottom: 0.5em;
+        display: flex;
+        align-items: center;
+    }
+    #sign label{
+        font-size: larger;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-right: 5px;
+    }
+    #sign input {
+        box-sizing: border-box;
+        width: 100%;
+        height: 2.5em;
+        font-size: 15px;
+        background-color: rgb(254, 223, 84);
+        border: 1px solid black;
+        outline: none;
+    }
+    #sign section:nth-child(3) input {
+        width: 6em;
+    }
+    #sign section:nth-child(2) input {
+        width: fit-content;
+        height: fit-content;
+    }
+    #sign #logger {
+        box-sizing: border-box;
+        box-shadow: 0px 0px 30px white;
+        width: 100%;
+        height: 2em;
+        font-size: large;
+        background-color: rgb(101, 255, 98);
+        border: 1px solid black;
+        border-radius: 0.5em;
+
+    }
+    #log {
+        width: 100%;
+        height: 8em;
+        display: flex;
+        flex-direction: column;
+    }
+    #log section {
+        margin-bottom: 0.5em;
+        display: flex;
+        align-items: center;
+    }
+    #log label{
+        font-size: x-large;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-right: 5px;
+    }
+    #log input {
+        box-sizing: border-box;
+        width: 100%;
+        height: 2.5em;
+        font-size: 15px;
+        background-color: rgb(57, 255, 116);
+        border: 1px solid black;
+        outline: none;
+    }
+    #log #logger {
+        box-sizing: border-box;
+        box-shadow: 0px 0px 30px white;
+        width: 100%;
+        height: 2em;
+        font-size: large;
+        background-color: rgb(51, 255, 0);
+        border: 1px solid black;
+        border-radius: 0.5em;
+
+    }
 }
