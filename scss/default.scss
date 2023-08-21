@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    font-family: $font-text;
+    padding: 0px;
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    margin: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+::selection {
+    color: #000;
+    background-color: lighten($color-primary, 10%);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: lighten($color-secondary, 15%);
+}
+
+::-webkit-scrollbar-thumb {
+    background: lighten($color-primary, 15%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: lighten($color-primary, 10%);
+}
+
+img {
+    width: 100%;
+}

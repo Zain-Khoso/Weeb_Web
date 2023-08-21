@@ -1,0 +1,98 @@
+.services {
+    width: 100%;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: space-evenly;
+    align-items: center;
+
+    > .service-card {
+        width: 95%;
+        max-width: 1280px;
+        height: 200px;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 20px;
+
+        transition: all 0.5s;
+
+        > .service-img {
+            width: 200px;
+            border: 5px solid $color-primary;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-left: 10px;
+            transition: all 0.5s;
+
+            display: flex;
+            align-items: center;
+        }
+
+        > .service-context {
+            width: 100%;
+            height: 100%;
+            padding: 10px 30px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            > h1 {
+                font-size: xx-large;
+                font-family: $font-subheading;
+                text-decoration: underline;
+                letter-spacing: 1px;
+                color: $color-primary;
+                overflow-y: hidden;
+                transition: all 0.5s;
+            }
+
+            > p {
+                font-size: medium;
+                font-family: $font-text;
+                color: lighten($color-primary, 25%);
+                padding: 0px 10px;
+                overflow-y: hidden;
+            }
+
+            > h1:hover,
+            p:hover {
+                cursor: default;
+            }
+
+            a {
+                @include btn-secondary;
+            }
+
+            a:hover {
+                @include btn-secondary-hover;
+            }
+        }
+    }
+
+    > .service-card:hover {
+        background-color: $color-primary;
+        box-shadow: rgba(255, 255, 255, 0.138) 10px 10px 10px;
+        border-radius: 10px;
+
+        .service-img {
+            border-color: $color-secondary;
+        }
+
+        h1 {
+            color: $color-heading;
+        }
+
+        a {
+            background-color: $color-secondary;
+            color: $color-primary;
+        }
+    }
+}

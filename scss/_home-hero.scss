@@ -1,0 +1,62 @@
+> section {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin-top: 1em;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-around;
+
+    .hero-info {
+        width: 80%;
+        max-width: 500px;
+        height: 100%;
+        min-height: 450px;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        > h1 {
+            font-size: x-large;
+            font-family: $font-subheading;
+            text-align: left;
+            letter-spacing: 1px;
+            color: $color-heading;
+        }
+
+        > p {
+            font-size: large;
+            font-family: $font-text;
+            color: #0000007e;
+            margin-left: 10px;
+        }
+
+        > .hero-btns {
+            width: 100%;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+
+            > .hero-btn {
+                @include btn-primary;
+            }
+
+            > .hero-btn:hover {
+                @include btn-primary-hover;
+            }
+        }
+    }
+
+    .hero-img {
+        width: 70%;
+        max-width: 500px;
+        height: 100%;
+        min-height: 450px;
+        overflow: hidden;
+    }
+}
