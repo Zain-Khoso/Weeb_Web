@@ -9,7 +9,7 @@ body {
     header {
         width: 100vw;
         height: 100vh;
-        max-height: 600px;
+        min-height: 600px;
         background-color: $color-primary;
         padding: 0px 5vw;
         overflow: hidden;
@@ -114,3 +114,5 @@ body {
         }
     }
 }
+
+@import "home-tablet";
