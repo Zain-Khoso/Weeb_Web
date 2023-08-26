@@ -49,8 +49,10 @@ body header {
   width: 100vw;
   height: 100vh;
   min-height: 600px;
+  max-height: 800px;
   background-color: #7168ea;
   padding: 0px 5vw;
+  border-bottom-right-radius: 50%;
   overflow: hidden;
   display: flex;
   flex-wrap: nowrap;
@@ -60,7 +62,8 @@ body header {
 body header nav {
   width: 100%;
   max-width: 1280px;
-  height: 60px;
+  height: 80px;
+  padding: 10px 0px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -75,11 +78,11 @@ body header nav .nav-brand {
   gap: 1em;
 }
 body header nav .nav-brand .nav-brand-img-container {
-  width: 50px;
+  width: 60px;
 }
 body header nav .nav-brand a {
   font-size: 2rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Catamaran", sans-serif;
   font-weight: 700;
   color: #fff;
 }
@@ -95,8 +98,9 @@ body header nav .navigation {
   gap: 1em;
 }
 body header nav .navigation a {
-  font-size: large;
-  font-family: "Oswald", sans-serif;
+  font-size: larger;
+  font-family: "Overlock", cursive;
+  font-weight: 700;
   letter-spacing: 2px;
   color: #282828;
   transition: all 0.3s;
@@ -108,14 +112,15 @@ body header nav .navigation a:hover {
 }
 body header nav .navigation button {
   font-size: large;
-  font-family: "Roboto", sans-serif;
+  font-family: "Overlock", cursive;
+  font-weight: 700;
   letter-spacing: 1px;
   background-color: #0e0e0e;
   color: #7168ea;
   padding: 10px 30px;
   border-radius: 5px;
   transition: all 0.3s;
-  font-size: large;
+  font-size: larger;
 }
 body header nav .navigation button:hover {
   background-color: #9b95f0;
@@ -132,20 +137,22 @@ body header > section {
   justify-content: space-around;
 }
 body header > section .hero-info {
-  width: 80%;
+  width: 50%;
   max-width: 500px;
   height: 100%;
   min-height: 450px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 15px;
 }
 body header > section .hero-info > h1 {
-  font-size: xx-large;
-  font-family: "Oswald", sans-serif;
-  text-align: left;
-  letter-spacing: 1px;
+  font-size: 2.5rem;
+  font-family: "Overlock", cursive;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 2px;
   color: #fff;
 }
 body header > section .hero-info > p {
@@ -163,7 +170,8 @@ body header > section .hero-info > .hero-btns {
 }
 body header > section .hero-info > .hero-btns > .hero-btn {
   font-size: large;
-  font-family: "Roboto", sans-serif;
+  font-family: "Overlock", cursive;
+  font-weight: 700;
   letter-spacing: 1px;
   background-color: #0e0e0e;
   color: #7168ea;
@@ -177,17 +185,16 @@ body header > section .hero-info > .hero-btns > .hero-btn:hover {
   cursor: pointer;
 }
 body header > section .hero-img {
-  width: 70%;
-  max-width: 500px;
+  width: 600px;
   height: 100%;
   min-height: 450px;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 body main {
   width: 100vw;
-  margin: 30px 0px;
+  margin: 10px 0px;
 }
 body main .services {
   width: 100%;
@@ -231,7 +238,7 @@ body main .services > .service-card > .service-context {
 }
 body main .services > .service-card > .service-context > h1 {
   font-size: xx-large;
-  font-family: "Oswald", sans-serif;
+  font-family: "Overlock", cursive;
   text-decoration: underline;
   letter-spacing: 1px;
   color: #7168ea;
@@ -251,7 +258,8 @@ body main .services > .service-card > .service-context p:hover {
 }
 body main .services > .service-card > .service-context a {
   font-size: large;
-  font-family: "Roboto", sans-serif;
+  font-family: "Overlock", cursive;
+  font-weight: 700;
   letter-spacing: 1px;
   background-color: #7168ea;
   color: #0e0e0e;
@@ -281,7 +289,7 @@ body main .services > .service-card:hover a {
 }
 body main .testimonials {
   width: 100%;
-  height: 550px;
+  height: 500px;
   overflow: hidden;
 }
 body main .testimonials > svg {
@@ -293,7 +301,7 @@ body main .testimonials > h1 {
   max-width: 1280px;
   text-align: left;
   font-size: 40px;
-  font-family: "Oswald", sans-serif;
+  font-family: "Overlock", cursive;
   color: whitesmoke;
   padding-left: 20px;
   margin: 20px auto;
@@ -307,12 +315,13 @@ body main .testimonials > .container {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-start;
+  gap: 20px;
 }
 body main .testimonials > .container > .testimonial {
   width: 25%;
   max-width: 400px;
   min-width: 300px;
-  height: 450px;
+  height: 370px;
   border: 2px solid #7168ea;
   border-radius: 15px;
 }
@@ -338,7 +347,8 @@ body main .testimonials > .container > .testimonial > .testimonial-context {
 body main .testimonials > .container > .testimonial > .testimonial-context > h2 {
   width: 100%;
   font-size: x-large;
-  font-family: "Oswald", sans-serif;
+  font-family: "Overlock", cursive;
+  font-weight: 700;
   text-align: center;
   color: #0e0e0e;
   margin: 10px 0px;
@@ -393,7 +403,7 @@ body footer > .footer-contents > .brand > .img-container {
 }
 body footer > .footer-contents > .brand > h1 {
   font-size: 40px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Catamaran", sans-serif;
   font-weight: 700;
   color: #0e0e0e;
   margin-top: 10px;
@@ -419,94 +429,6 @@ body footer > .footer-contents p a {
 body footer > .footer-contents p a:hover {
   cursor: pointer;
   text-shadow: rgba(255, 255, 255, 0.335) 2px 2px 0px;
-}
-
-@media (max-width: 1020px) {
-  body header {
-    min-height: 0px;
-    padding: 1em;
-  }
-  body header > nav .nav-brand {
-    gap: 0.5em;
-  }
-  body header > nav .nav-brand > h1 {
-    font-size: xx-large;
-  }
-  body header > nav .navigation {
-    gap: 0.5em;
-  }
-  body header > nav .navigation button {
-    font-weight: 700;
-    padding: 5px 10px;
-  }
-  body header > section .hero-img {
-    display: none;
-  }
-  body header > section .hero-info {
-    min-height: 0px;
-  }
-  body header > section .hero-info h1 {
-    font-size: x-large;
-  }
-  body header > section .hero-info p {
-    font-size: medium;
-  }
-  body header > section .hero-info > .hero-btns > .hero-btn {
-    padding: 10px 15px;
-    font-weight: 700;
-  }
-  body main > .services {
-    height: 600px;
-  }
-  body main > .services > .service-card {
-    width: 95%;
-    height: 250px;
-    gap: 10px;
-  }
-  body main > .services > .service-card > .service-img {
-    display: none;
-  }
-  body main > .services > .service-card > .service-context > a {
-    font-weight: 700;
-    padding: 10px 20px;
-  }
-  body main > .testimonials {
-    height: fit-content;
-  }
-  body main > .testimonials > .container {
-    flex-direction: column;
-    align-items: center;
-    row-gap: 20px;
-  }
-  body main > .testimonials > .container > .testimonial {
-    width: 500px;
-    height: 400px;
-  }
-  body main > .testimonials > .container > .testimonial > .testimonial-img > .img-container {
-    width: calc(40% - 20px);
-  }
-  body main > .testimonials > .container > .testimonial > .testimonial-context > h2 {
-    font-size: xx-large;
-  }
-  body footer {
-    height: 170px;
-  }
-  body footer > .footer-contents {
-    row-gap: 5px;
-  }
-  body footer > .footer-contents > .brand > .img-container {
-    width: 50px;
-    margin: 0px 5px;
-  }
-  body footer > .footer-contents > .brand h1 {
-    font-size: xx-large;
-  }
-  body footer > .footer-contents h4 {
-    font-size: small;
-  }
-  body footer > .footer-contents p {
-    display: none;
-  }
 }
 
 /*# sourceMappingURL=home.css.map */

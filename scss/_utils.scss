@@ -1,6 +1,7 @@
 @mixin btn-primary {
     font-size: large;
-    font-family: $font-text;
+    font-family: $font-subheading;
+    font-weight: 700;
     letter-spacing: 1px;
     background-color: $color-secondary;
     color: $color-primary;
@@ -16,7 +17,8 @@
 }
 @mixin btn-secondary {
     font-size: large;
-    font-family: $font-text;
+    font-family: $font-subheading;
+    font-weight: 700;
     letter-spacing: 1px;
     background-color: $color-primary;
     color: $color-secondary;
