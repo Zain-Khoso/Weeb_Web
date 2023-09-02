@@ -9,12 +9,12 @@
     border-radius: 5px;
     transition: all 0.3s;
 }
-
 @mixin btn-primary-hover {
     background-color: lighten($color-primary, 10%);
     color: $color-secondary;
     cursor: pointer;
 }
+
 @mixin btn-secondary {
     font-size: large;
     font-family: $font-subheading;
@@ -26,7 +26,6 @@
     border-radius: 5px;
     transition: all 0.3s;
 }
-
 @mixin btn-secondary-hover {
     background-color: lighten($color-secondary, 10%);
     color: $color-primary;
@@ -36,4 +35,8 @@
 @mixin section-seperater {
     position: absolute;
     z-index: -1;
+}
+
+.hidden {
+    display: none;
 }

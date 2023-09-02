@@ -1,3 +1,7 @@
+.hidden {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
   width: fit-content;
@@ -12,6 +16,7 @@
   border-radius: 0px;
   outline: none;
   margin: 0px;
+  scroll-behavior: smooth;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -357,10 +362,44 @@ body main .testimonials > .container > .testimonial > .testimonial-context > p {
   width: 100%;
   font-size: medium;
   font-family: "Roboto", sans-serif;
-  font-style: italic;
   text-align: center;
   color: black;
   padding: 0px 20px;
+}
+body main .about {
+  width: 100%;
+  height: 80vh;
+  background-color: #7168ea;
+  margin-bottom: 2em;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+body main .about .about-img-container {
+  width: 40%;
+}
+body main .about .about-context {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main .about .about-context h1 {
+  width: 5em;
+  text-align: left;
+  font-size: 5rem;
+  font-family: "Catamaran", sans-serif;
+  letter-spacing: 2px;
+}
+body main .about .about-context p {
+  width: 25em;
+  font-size: large;
+  font-family: "Roboto", sans-serif;
+  margin-top: -30px;
+  margin-left: 20px;
 }
 body footer {
   width: 100%;
@@ -368,7 +407,6 @@ body footer {
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
 }
 body footer > svg {
   position: absolute;
@@ -409,12 +447,15 @@ body footer > .footer-contents > .brand > h1 {
   margin-top: 10px;
 }
 body footer > .footer-contents h4 {
+  text-align: center;
   font-size: medium;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: #0e0e0e;
 }
 body footer > .footer-contents p {
+  align-self: center;
+  text-align: center;
   overflow: hidden;
 }
 body footer > .footer-contents p a {
@@ -429,6 +470,113 @@ body footer > .footer-contents p a {
 body footer > .footer-contents p a:hover {
   cursor: pointer;
   text-shadow: rgba(255, 255, 255, 0.335) 2px 2px 0px;
+}
+body .hidden {
+  display: none;
+}
+body #blur-screen {
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0px;
+}
+body #authentication-model {
+  width: 400px;
+  height: 450px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 50px black;
+  border-radius: 10px;
+  margin-top: 50vh;
+  margin-left: 50vw;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  top: 0px;
+}
+body #authentication-model .state-toggler {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+}
+body #authentication-model .state-toggler .state {
+  font-size: large;
+  font-family: "Overlock", cursive;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background-color: #0e0e0e;
+  color: #7168ea;
+  padding: 10px 30px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  width: 50%;
+  border-radius: 0px;
+  background-color: #7168ea;
+  color: #fff;
+}
+body #authentication-model .state-toggler .state:hover {
+  cursor: pointer;
+}
+body #authentication-model .state-toggler .focus-state {
+  background-color: #fff;
+  color: #7168ea;
+}
+body #authentication-model .svg-container {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+body #authentication-model form {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+body #authentication-model form label {
+  font-size: large;
+  font-family: "Roboto", sans-serif;
+  color: #0e0e0e;
+  margin-right: 5px;
+}
+body #authentication-model form input {
+  font-size: larger;
+  font-family: "Overlock", cursive;
+  font-weight: 700;
+  caret-color: #7168ea;
+  color: #7168ea;
+  background-color: #fff;
+  padding: 5px;
+  border: 2px solid #7168ea;
+  border-radius: 10px;
+}
+body #authentication-model form a {
+  width: 100%;
+  font-size: medium;
+  font-family: "Roboto", sans-serif;
+  text-align: right;
+  color: #0e0e0e;
+  margin-bottom: 30px;
+}
+body #authentication-model form button {
+  font-size: large;
+  font-family: "Overlock", cursive;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background-color: #0e0e0e;
+  color: #7168ea;
+  padding: 10px 30px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  width: 100%;
+  background-color: #fff;
+}
+body #authentication-model form button:hover {
+  background-color: #b0abf3;
+  color: #fff;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=home.css.map */

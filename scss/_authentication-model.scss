@@ -1,0 +1,107 @@
+@import "config";
+@import "utils";
+
+#blur-screen {
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+
+    position: fixed;
+    top: 0px;
+}
+#authentication-model {
+    width: 400px;
+    height: 450px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 50px black;
+    border-radius: 10px;
+    margin-top: calc(100vh / 2);
+    margin-left: calc(100vw / 2);
+    transform: translate(-50%, -50%);
+
+    position: fixed;
+    top: 0px;
+
+    .state-toggler {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+
+        .state {
+            @include btn-primary;
+            width: 50%;
+            border-radius: 0px;
+            background-color: $color-primary;
+            color: $color-heading;
+        }
+
+        .state:hover {
+            cursor: pointer;
+        }
+
+        .focus-state {
+            background-color: $color-heading;
+            color: $color-primary;
+        }
+    }
+
+    .svg-container {
+        width: 100%;
+        margin-top: 50px;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    form {
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        label {
+            font-size: large;
+            font-family: $font-text;
+            color: $color-secondary;
+            margin-right: 5px;
+        }
+
+        input {
+            font-size: larger;
+            font-family: $font-subheading;
+            font-weight: 700;
+            caret-color: $color-primary;
+            color: $color-primary;
+            background-color: $color-heading;
+            padding: 5px;
+            border: 2px solid $color-primary;
+            border-radius: 10px;
+        }
+
+        a {
+            width: 100%;
+            font-size: medium;
+            font-family: $font-text;
+            text-align: right;
+            color: $color-secondary;
+            margin-bottom: 30px;
+        }
+
+        button {
+            @include btn-primary;
+            width: 100%;
+            background-color: $color-heading;
+        }
+
+        button:hover {
+            background-color: lighten($color-primary, 15%);
+            color: $color-heading;
+            cursor: pointer;
+        }
+    }
+}
