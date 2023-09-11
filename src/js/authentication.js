@@ -67,7 +67,7 @@ const user_signup = function () {
     const password = elem_password.value;
 
     if (localStorage.length !== 0) {
-        alert("You already hae an account here try to login to that account.");
+        alert("You already have an account here try to login to that account.");
 
         return;
     }

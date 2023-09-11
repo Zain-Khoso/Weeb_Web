@@ -1,0 +1,11 @@
+@import "config";
+
+body {
+    background-color: $color-secondary;
+
+    h1 {
+        font-size: 3rem;
+        font-family: $font-heading;
+        margin: 0.3em;
+    }
+}
