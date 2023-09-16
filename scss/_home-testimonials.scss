@@ -5,11 +5,15 @@
 
     > svg {
         @include section-seperater;
+        width: 100vw;
+        max-width: 1440px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     > h1 {
         width: 100%;
-        max-width: 1280px;
+        max-width: 1440px;
         text-align: left;
         font-size: 40px;
         font-family: $font-subheading;
@@ -20,7 +24,7 @@
 
     > .container {
         width: 100%;
-        max-width: 1280px;
+        max-width: 1440px;
         height: 100%;
         margin: 0px auto;
 

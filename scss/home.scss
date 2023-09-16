@@ -7,12 +7,14 @@ body {
 
     header {
         width: 100vw;
+        max-width: 1440px;
         height: 100vh;
         min-height: 600px;
         max-height: 800px;
         background-color: $color-primary;
         padding: 0px 5vw;
         border-bottom-right-radius: 50%;
+        margin: 0px auto;
         overflow: hidden;
 
         display: flex;
@@ -37,87 +39,69 @@ body {
     }
 
     footer {
-        width: 100%;
-        height: 250px;
+        width: 100vw;
+        max-width: 1440px;
+        height: 200px;
+        background-color: $color-primary;
+        margin: 0px auto;
         overflow: hidden;
 
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
 
-        > svg {
-            @include section-seperater;
-        }
-
-        > .footer-contents {
-            width: 100%;
-            max-width: 1280px;
-            margin: 10px 0px;
-
+        .brand {
             display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
+            flex-direction: row;
+            justify-content: center;
             align-items: center;
-            justify-content: flex-end;
+            gap: 20px;
 
-            row-gap: 10px;
+            .img-container {
+                width: 70px;
+                background-color: $color-secondary;
+                padding: 5px;
+                border-radius: 50%;
 
-            > .brand {
                 display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
+                justify-content: center;
                 align-items: center;
-
-                > .img-container {
-                    width: 70px;
-                    background-color: $color-secondary;
-                    padding: 5px;
-                    border-radius: 50%;
-                    margin: 0px 20px;
-
-                    display: flex;
-                    justify-items: center;
-                    align-items: center;
-                }
-
-                > h1 {
-                    font-size: 40px;
-                    font-family: $font-heading;
-                    font-weight: 700;
-                    color: $color-secondary;
-                    margin-top: 10px;
-                }
             }
 
-            h4 {
-                text-align: center;
-                font-size: medium;
+            h2 {
+                font-size: 2rem;
+                font-family: $font-subheading;
+            }
+        }
+
+        span {
+            font-size: larger;
+            font-family: $font-text;
+        }
+
+        p {
+            font-size: large;
+            font-family: $font-text;
+            margin-bottom: 10px;
+
+            a {
+                font-size: 1.3rem;
                 font-family: $font-text;
-                font-weight: 400;
                 color: $color-secondary;
             }
 
-            p {
-                align-self: center;
-                text-align: center;
-                overflow: hidden;
-
-                a {
-                    font-size: large;
-                    font-family: $font-text;
-                    font-weight: 700;
-                    letter-spacing: 1px;
-                    color: $color-secondary;
-                    transition: all 0.3s;
-                    padding: 5px 10px;
-                }
-
-                a:hover {
-                    cursor: pointer;
-                    text-shadow: rgba(255, 255, 255, 0.335) 2px 2px 0px;
-                }
+            a:hover {
+                cursor: pointer;
+                font-weight: 700;
             }
         }
     }
 
     @import "authentication-model";
 }
+
+// Responsiveness
+@import "home-tablet";
+@import "home-mobile";

@@ -1,6 +1,6 @@
 > section {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1440px;
     height: 100%;
     overflow: hidden;
 
@@ -57,6 +57,8 @@
         width: 600px;
         height: 100%;
         min-height: 450px;
+        object-fit: contain;
+        object-position: center;
         overflow: hidden;
 
         display: flex;

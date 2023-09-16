@@ -8,12 +8,14 @@ body {
 }
 body header {
   width: 100vw;
+  max-width: 1440px;
   height: 100vh;
   min-height: 600px;
   max-height: 800px;
   background-color: #7168ea;
   padding: 0px 5vw;
   border-bottom-right-radius: 50%;
+  margin: 0px auto;
   overflow: hidden;
   display: flex;
   flex-wrap: nowrap;
@@ -91,7 +93,7 @@ body header nav .navigation button:hover {
 }
 body header > section {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1440px;
   height: 100%;
   overflow: hidden;
   display: flex;
@@ -149,6 +151,8 @@ body header > section .hero-img {
   width: 600px;
   height: 100%;
   min-height: 450px;
+  object-fit: contain;
+  object-position: center;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
@@ -256,10 +260,14 @@ body main .testimonials {
 body main .testimonials > svg {
   position: absolute;
   z-index: -1;
+  width: 100vw;
+  max-width: 1440px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 body main .testimonials > h1 {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1440px;
   text-align: left;
   font-size: 40px;
   font-family: "Overlock", cursive;
@@ -269,7 +277,7 @@ body main .testimonials > h1 {
 }
 body main .testimonials > .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1440px;
   height: 100%;
   margin: 0px auto;
   display: flex;
@@ -324,8 +332,11 @@ body main .testimonials > .container > .testimonial > .testimonial-context > p {
 }
 body main .about {
   width: 100%;
+  max-width: 1440px;
   height: 80vh;
+  max-height: 700px;
   background-color: #7168ea;
+  margin: 0px auto;
   margin-bottom: 2em;
   overflow: hidden;
   display: flex;
@@ -358,74 +369,55 @@ body main .about .about-context p {
   margin-left: 20px;
 }
 body footer {
-  width: 100%;
-  height: 250px;
+  width: 100vw;
+  max-width: 1440px;
+  height: 200px;
+  background-color: #7168ea;
+  margin: 0px auto;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
-}
-body footer > svg {
-  position: absolute;
-  z-index: -1;
-}
-body footer > .footer-contents {
-  width: 100%;
-  max-width: 1280px;
-  margin: 10px 0px;
-  display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
   justify-content: flex-end;
-  row-gap: 10px;
+  align-items: center;
+  gap: 10px;
 }
-body footer > .footer-contents > .brand {
+body footer .brand {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
 }
-body footer > .footer-contents > .brand > .img-container {
+body footer .brand .img-container {
   width: 70px;
   background-color: #0e0e0e;
   padding: 5px;
   border-radius: 50%;
-  margin: 0px 20px;
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
 }
-body footer > .footer-contents > .brand > h1 {
-  font-size: 40px;
-  font-family: "Catamaran", sans-serif;
-  font-weight: 700;
-  color: #0e0e0e;
-  margin-top: 10px;
+body footer .brand h2 {
+  font-size: 2rem;
+  font-family: "Overlock", cursive;
 }
-body footer > .footer-contents h4 {
-  text-align: center;
-  font-size: medium;
+body footer span {
+  font-size: larger;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  color: #0e0e0e;
 }
-body footer > .footer-contents p {
-  align-self: center;
-  text-align: center;
-  overflow: hidden;
-}
-body footer > .footer-contents p a {
+body footer p {
   font-size: large;
   font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #0e0e0e;
-  transition: all 0.3s;
-  padding: 5px 10px;
+  margin-bottom: 10px;
 }
-body footer > .footer-contents p a:hover {
+body footer p a {
+  font-size: 1.3rem;
+  font-family: "Roboto", sans-serif;
+  color: #0e0e0e;
+}
+body footer p a:hover {
   cursor: pointer;
-  text-shadow: rgba(255, 255, 255, 0.335) 2px 2px 0px;
+  font-weight: 700;
 }
 body #blur-screen {
   width: 100vw;
@@ -530,6 +522,252 @@ body #authentication-model form button:hover {
   background-color: #b0abf3;
   color: #fff;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1020px) {
+  body header {
+    max-width: 100vw;
+    height: 100vh;
+    padding: 0px 10px;
+    border-radius: 0px;
+  }
+  body header nav {
+    height: 60px;
+    padding: 0px;
+  }
+  body header nav .nav-brand {
+    gap: 3px;
+  }
+  body header nav .nav-brand .nav-brand-img-container {
+    width: 40px;
+  }
+  body header nav .nav-brand a {
+    font-size: xx-large;
+  }
+  body header nav .navigation {
+    gap: 10px;
+  }
+  body header nav .navigation a {
+    font-size: large;
+  }
+  body header nav .navigation button {
+    font-size: large;
+    padding: 5px 15px;
+  }
+  body header section {
+    align-items: center;
+  }
+  body header section .hero-info {
+    width: 80%;
+    height: 40%;
+  }
+  body header section .hero-img {
+    display: none;
+  }
+  body main .services .service-card {
+    width: 95%;
+    gap: 5px;
+  }
+  body main .services .service-card .service-img {
+    width: 150px;
+    border-width: 2px;
+  }
+  body main .services .service-card .service-context {
+    padding: 10px;
+    justify-content: space-evenly;
+  }
+  body main .services .service-card .service-context h1 {
+    font-size: larger;
+  }
+  body main .services .service-card .service-context p {
+    font-size: small;
+  }
+  body main .services .service-card .service-context a {
+    font-size: large;
+    padding: 5px 15px;
+  }
+  body main .testimonials {
+    width: 100vw;
+    height: 450px;
+  }
+  body main .testimonials > h1 {
+    font-size: xx-large;
+    margin: 5px;
+  }
+  body main .testimonials > .container {
+    width: 90%;
+    overflow-x: scroll;
+    gap: 5px;
+    justify-content: flex-start;
+  }
+  body main .about {
+    height: 250px;
+    margin-bottom: 1em;
+  }
+  body main .about .about-img-container {
+    width: 40%;
+    max-width: 200px;
+  }
+  body main .about .about-context {
+    width: fit-content;
+    margin: 0px auto;
+    align-items: flex-start;
+  }
+  body main .about .about-context h1 {
+    font-size: xx-large;
+  }
+  body main .about .about-context p {
+    width: 100%;
+    max-width: 300px;
+    font-size: x-small;
+    margin-top: -10px;
+    margin-left: 0px;
+  }
+  body footer {
+    height: 150px;
+  }
+  body footer .brand {
+    gap: 10px;
+  }
+  body footer .brand .img-container {
+    width: 50px;
+  }
+  body footer .brand h2 {
+    font-size: 1.5rem;
+  }
+  body footer span {
+    font-size: medium;
+  }
+  body footer p a {
+    font-size: medium;
+  }
+}
+@media screen and (max-width: 480px) {
+  body header {
+    padding: 0px 5px;
+  }
+  body header nav {
+    height: 50px;
+  }
+  body header nav .nav-brand a {
+    font-size: large;
+  }
+  body header nav .navigation {
+    gap: 3px;
+  }
+  body header nav .navigation a {
+    font-size: small;
+  }
+  body header nav .navigation button {
+    font-size: small;
+    padding: 5px 10px;
+  }
+  body header section .hero-info {
+    width: 90%;
+    height: 60%;
+  }
+  body header section .hero-info h1 {
+    font-size: xx-large;
+  }
+  body header section .hero-info p {
+    font-size: medium;
+  }
+  body main .services {
+    height: 350px;
+  }
+  body main .services .service-card {
+    width: 100%;
+    height: 150px;
+    gap: 5px;
+  }
+  body main .services .service-card .service-img {
+    width: 70px;
+  }
+  body main .services .service-card .service-context {
+    padding: 5px;
+  }
+  body main .services .service-card .service-context h1 {
+    font-size: larger;
+  }
+  body main .services .service-card .service-context p {
+    font-size: xx-small;
+  }
+  body main .services .service-card .service-context a {
+    font-size: small;
+    padding: 5px;
+  }
+  body main .testimonials > h1 {
+    font-size: x-large;
+    padding-left: 5px;
+    margin: 0px;
+  }
+  body main .testimonials > .container {
+    width: 95%;
+  }
+  body main .about {
+    height: 150px;
+  }
+  body main .about .about-img-container {
+    width: 40%;
+  }
+  body main .about .about-context {
+    margin-left: 20px;
+  }
+  body main .about .about-context h1 {
+    font-size: large;
+  }
+  body main .about .about-context p {
+    font-size: 8px;
+    margin-top: -5px;
+  }
+  body footer {
+    height: 100px;
+    gap: 5px;
+  }
+  body footer .brand {
+    gap: 5px;
+  }
+  body footer .brand .img-container {
+    width: 30px;
+    padding: 0px;
+  }
+  body footer .brand h2 {
+    font-size: large;
+  }
+  body footer span {
+    font-size: small;
+  }
+  body footer p a {
+    font-size: small;
+  }
+  body #authentication-model {
+    width: 300px;
+    height: 350px;
+  }
+  body #authentication-model .state-toggler .state {
+    font-size: medium;
+  }
+  body #authentication-model .svg-container {
+    margin-top: 10px;
+  }
+  body #authentication-model .svg-container svg {
+    width: 30%;
+  }
+  body #authentication-model form {
+    padding: 5px;
+    margin-top: 10px;
+    gap: 5px;
+  }
+  body #authentication-model form label {
+    font-size: medium;
+    margin-right: 5px;
+  }
+  body #authentication-model form input {
+    font-size: medium;
+  }
+  body #authentication-model form a {
+    font-size: small;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,176 @@
+@media screen and (max-width: $breakpoint-mobile) {
+    body {
+        header {
+            padding: 0px 5px;
+
+            nav {
+                height: 50px;
+
+                .nav-brand {
+                    a {
+                        font-size: large;
+                    }
+                }
+
+                .navigation {
+                    gap: 3px;
+
+                    a {
+                        font-size: small;
+                    }
+
+                    button {
+                        font-size: small;
+                        padding: 5px 10px;
+                    }
+                }
+            }
+
+            section {
+                .hero-info {
+                    width: 90%;
+                    height: 60%;
+
+                    h1 {
+                        font-size: xx-large;
+                    }
+
+                    p {
+                        font-size: medium;
+                    }
+                }
+            }
+        }
+
+        main {
+            .services {
+                height: 350px;
+                .service-card {
+                    width: 100%;
+                    height: 150px;
+                    gap: 5px;
+
+                    .service-img {
+                        width: 70px;
+                    }
+
+                    .service-context {
+                        padding: 5px;
+
+                        h1 {
+                            font-size: larger;
+                        }
+
+                        p {
+                            font-size: xx-small;
+                        }
+
+                        a {
+                            font-size: small;
+                            padding: 5px;
+                        }
+                    }
+                }
+            }
+
+            .testimonials {
+                > h1 {
+                    font-size: x-large;
+                    padding-left: 5px;
+                    margin: 0px;
+                }
+
+                > .container {
+                    width: 95%;
+                }
+            }
+
+            .about {
+                height: 150px;
+
+                .about-img-container {
+                    width: 40%;
+                }
+
+                .about-context {
+                    margin-left: 20px;
+
+                    h1 {
+                        font-size: large;
+                    }
+
+                    p {
+                        font-size: 8px;
+                        margin-top: -5px;
+                    }
+                }
+            }
+        }
+
+        footer {
+            height: 100px;
+            gap: 5px;
+
+            .brand {
+                gap: 5px;
+
+                .img-container {
+                    width: 30px;
+                    padding: 0px;
+                }
+
+                h2 {
+                    font-size: large;
+                }
+            }
+
+            span {
+                font-size: small;
+            }
+
+            p {
+                a {
+                    font-size: small;
+                }
+            }
+        }
+
+        #authentication-model {
+            width: 300px;
+            height: 350px;
+
+            .state-toggler {
+                .state {
+                    font-size: medium;
+                }
+            }
+
+            .svg-container {
+                margin-top: 10px;
+
+                svg {
+                    width: 30%;
+                }
+            }
+
+            form {
+                padding: 5px;
+                margin-top: 10px;
+                gap: 5px;
+
+                label {
+                    font-size: medium;
+                    margin-right: 5px;
+                }
+
+                input {
+                    font-size: medium;
+                }
+
+                a {
+                    font-size: small;
+                }
+            }
+        }
+    }
+}
