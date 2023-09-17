@@ -24,7 +24,7 @@ body header {
 }
 body header nav {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1440px;
   height: 80px;
   padding: 10px 3vw;
   overflow: hidden;
@@ -425,11 +425,12 @@ body #blur-screen {
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0px;
+  z-index: 5;
 }
 body #authentication-model {
   width: 400px;
   height: 450px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 50px black;
   border-radius: 10px;
   margin-top: 50vh;
@@ -437,6 +438,7 @@ body #authentication-model {
   transform: translate(-50%, -50%);
   position: fixed;
   top: 0px;
+  z-index: 6;
 }
 body #authentication-model .state-toggler {
   width: 100%;
@@ -656,7 +658,7 @@ body #authentication-model form button:hover {
     gap: 3px;
   }
   body header nav .navigation a {
-    font-size: small;
+    display: none;
   }
   body header nav .navigation button {
     font-size: small;

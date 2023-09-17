@@ -1,0 +1,176 @@
+@import "config";
+@import "utils";
+
+body {
+    width: 100vw;
+    background-color: $color-secondary;
+
+    header {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @import "navbar";
+
+        nav > .navigation > li {
+            margin: 0px auto;
+
+            > a {
+                color: rgba($color-heading, 0.7);
+            }
+            > a:hover {
+                color: $color-heading;
+            }
+            > button {
+                @include btn-secondary;
+            }
+            > button:hover {
+                @include btn-secondary-hover;
+            }
+        }
+
+        @import "carousel";
+    }
+
+    main {
+        width: 100vw;
+        max-width: 1440px;
+        padding: 1em;
+        margin: 0px auto;
+
+        > h1 {
+            font-size: xx-large;
+            font-family: $font-subheading;
+            padding: 10px 0px;
+        }
+
+        section {
+            width: 100%;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1em;
+            row-gap: 2em;
+
+            .card {
+                width: 25%;
+                min-width: 300px;
+                height: 350px;
+                border-radius: 1em;
+                overflow: hidden;
+
+                .card-img {
+                    width: 100%;
+                    height: 150px;
+                    overflow: hidden;
+
+                    > img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+
+                .card-context {
+                    padding: 0.3em 0.5em;
+
+                    h2 {
+                        font-size: x-large;
+                        font-family: $font-heading;
+                    }
+
+                    p {
+                        font-size: medium;
+                        font-family: $font-text;
+                        color: rgba($color-heading, 0.8);
+                    }
+
+                    h3 {
+                        font-size: larger;
+                        font-family: $font-subheading;
+                        font-weight: 100;
+                        color: $color-heading;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        width: 100vw;
+        max-width: 1440px;
+        height: 200px;
+        background-color: $color-primary;
+        margin: 0px auto;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+
+        .brand {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            .img-container {
+                width: 70px;
+                background-color: $color-secondary;
+                padding: 5px;
+                border-radius: 50%;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h2 {
+                font-size: 2rem;
+                font-family: $font-subheading;
+            }
+        }
+
+        span {
+            font-size: larger;
+            font-family: $font-text;
+        }
+
+        p {
+            font-size: large;
+            font-family: $font-text;
+            margin-bottom: 10px;
+
+            a {
+                font-size: 1.3rem;
+                font-family: $font-text;
+                color: $color-secondary;
+            }
+
+            a:hover {
+                cursor: pointer;
+                font-weight: 700;
+            }
+        }
+    }
+
+    @import "authentication-model";
+
+    #authentication-model > form {
+        label,
+        > a {
+            color: $color-heading;
+        }
+    }
+}
+
+@import "content_page-tablet";
+@import "content_page-mobile";
