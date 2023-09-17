@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Overlock:wght@400;700&family=Roboto:wght@300&display=swap"
+            rel="stylesheet" />
+
+        <!-- Favicon -->
+        <link
+            rel="shortcut icon"
+            href="/assets/brand/favicon.png"
+            type="image/x-icon" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/src/css/default.css" />
+        <link rel="stylesheet" href="/src/css/content_page.css  " />
+
+        <!-- JS -->
+        <script defer src="/src/js/carousel.js"></script>
+        <script defer src="/src/js/authentication.js"></script>
+
+        <title>Anime | Weeb Web</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="nav-brand">
+                    <div class="nav-brand-img-container">
+                        <img src="/assets/brand/favicon.png" alt="Logo" />
+                    </div>
+                    <a href="/index.html">Weeb Web</a>
+                </div>
+
+                <ul class="navigation">
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#content">Content</a></li>
+                    <li><button id="auth-model-toggler">LOGIN</button></li>
+                </ul>
+            </nav>
+
+            <!-- Carousel -->
+            <section class="carousel" id="content">
+                <!-- Carousel Controls -->
+                <button class="control prev">&lAarr;</button>
+                <button class="control next">&rAarr;</button>
+
+                <!-- Slides -->
+                <div class="slides">
+                    <div class="slide active">
+                        <img
+                            src="/assets/anime_thumbnails/one-piece.jpg"
+                            alt="One Piece" />
+
+                        <!-- Slide Context -->
+                        <div class="slide-context">
+                            <h1>One Piece</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Id ex est eaque corrupti
+                                magnam, ullam, sunt dignissimos voluptatem autem
+                                adipisci voluptates officiis ab facere earum non
+                                blanditiis dolorum possimus ducimus rerum sed
+                                distinctio! Labore voluptatibus reprehenderit
+                                numquam velit ipsa maxime, blanditiis,
+                                asperiores delectus iusto repellendus quod et
+                                sequi, ullam cumque?
+                            </p>
+                            <a href="/src/html/not-available.html">Read</a>
+                            <a href="/src/html/not-available.html">Download</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="/assets/anime_thumbnails/attack-on-titan.jpg"
+                            alt="Attack On Titan" />
+
+                        <!-- Slide Context -->
+                        <div class="slide-context">
+                            <h1>Attack On Titan</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Id ex est eaque corrupti
+                                magnam, ullam, sunt dignissimos voluptatem autem
+                                adipisci voluptates officiis ab facere earum non
+                                blanditiis dolorum possimus ducimus rerum sed
+                                distinctio! Labore voluptatibus reprehenderit
+                                numquam velit ipsa maxime, blanditiis,
+                                asperiores delectus iusto repellendus quod et
+                                sequi, ullam cumque?
+                            </p>
+                            <a href="/src/html/not-available.html">Read</a>
+                            <a href="/src/html/not-available.html">Download</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="/assets/anime_thumbnails/naruto.jpg"
+                            alt="Naruto" />
+
+                        <!-- Slide Context -->
+                        <div class="slide-context">
+                            <h1>Naruto</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Id ex est eaque corrupti
+                                magnam, ullam, sunt dignissimos voluptatem autem
+                                adipisci voluptates officiis ab facere earum non
+                                blanditiis dolorum possimus ducimus rerum sed
+                                distinctio! Labore voluptatibus reprehenderit
+                                numquam velit ipsa maxime, blanditiis,
+                                asperiores delectus iusto repellendus quod et
+                                sequi, ullam cumque?
+                            </p>
+                            <a href="/src/html/not-available.html">Read</a>
+                            <a href="/src/html/not-available.html">Download</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="/assets/anime_thumbnails/deathnote.jpg"
+                            alt="Death Note" />
+
+                        <!-- Slide Context -->
+                        <div class="slide-context">
+                            <h1>Death Note</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Id ex est eaque corrupti
+                                magnam, ullam, sunt dignissimos voluptatem autem
+                                adipisci voluptates officiis ab facere earum non
+                                blanditiis dolorum possimus ducimus rerum sed
+                                distinctio! Labore voluptatibus reprehenderit
+                                numquam velit ipsa maxime, blanditiis,
+                                asperiores delectus iusto repellendus quod et
+                                sequi, ullam cumque?
+                            </p>
+                            <a href="/src/html/not-available.html">Read</a>
+                            <a href="/src/html/not-available.html">Download</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="/assets/anime_thumbnails/demon-slayer.jpg"
+                            alt="Demon Slayer" />
+
+                        <!-- Slide Context -->
+                        <div class="slide-context">
+                            <h1>Demon Slayer</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Id ex est eaque corrupti
+                                magnam, ullam, sunt dignissimos voluptatem autem
+                                adipisci voluptates officiis ab facere earum non
+                                blanditiis dolorum possimus ducimus rerum sed
+                                distinctio! Labore voluptatibus reprehenderit
+                                numquam velit ipsa maxime, blanditiis,
+                                asperiores delectus iusto repellendus quod et
+                                sequi, ullam cumque?
+                            </p>
+                            <a href="/src/html/not-available.html">Read</a>
+                            <a href="/src/html/not-available.html">Download</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <main id="collection">
+            <h1>Popular Anime Collection</h1>
+            <section>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/attack-on-titan.jpg"
+                            alt="Attack On Titan" />
+                    </div>
+                    <div class="card-context">
+                        <h2>Attack On Titan</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Ongoing</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/one-piece.jpg"
+                            alt="One Piece" />
+                    </div>
+                    <div class="card-context">
+                        <h2>One Piece</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Ongoing</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/deathnote.jpg"
+                            alt="Vinland Saga" />
+                    </div>
+                    <div class="card-context">
+                        <h2>Death Note</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Completed &middot; 37 Episodes</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/demon-slayer.jpg"
+                            alt="Demon Slayer" />
+                    </div>
+                    <div class="card-context">
+                        <h2>Demon Slayer</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Ongoing</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/naruto.jpg"
+                            alt="Naruto" />
+                    </div>
+                    <div class="card-context">
+                        <h2>Naruto</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Completed &middot; 720 Episodes</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/black-clover.jpg"
+                            alt="Black Clover" />
+                    </div>
+                    <div class="card-context">
+                        <h2>Black Clover</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Ongoing</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/bleach.jpg"
+                            alt="Bleach" />
+                    </div>
+                    <div class="card-context">
+                        <h2>Bleach</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Ongoing</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/chainsaw-man.jpg"
+                            alt="Chainsaw Man" />
+                    </div>
+                    <div class="card-context">
+                        <h2>Chainsaw Man</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Ongoing</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/demon-slayer.jpg"
+                            alt="Demon Slayer" />
+                    </div>
+                    <div class="card-context">
+                        <h2>Demon Slayer</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Ongoing</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/dragon-balls.jpg"
+                            alt="Dragon Balls" />
+                    </div>
+                    <div class="card-context">
+                        <h2>Dragon Balls</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Completed &middot; 153 Episodes</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/fairytail.jpg"
+                            alt="FairyTail" />
+                    </div>
+                    <div class="card-context">
+                        <h2>FairyTail</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Completed &middot; 328 Episodes</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/hunter-x-hunter.jpg"
+                            alt="Hunter X Hunter" />
+                    </div>
+                    <div class="card-context">
+                        <h2>Hunter X Hunter</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Completed &middot; 148 Episodes</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/one-punch-man.jpg"
+                            alt="One Punch Man" />
+                    </div>
+                    <div class="card-context">
+                        <h2>One Punch Man</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Ongoing</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/tokyo-ghoul.jpg"
+                            alt="Tokyo Ghoul" />
+                    </div>
+                    <div class="card-context">
+                        <h2>Tokyo Ghoul</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Completed &middot; 48 Episodes</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img
+                            src="/assets/anime_thumbnails/tokyo-revengers.jpg"
+                            alt="Tokyo Revengers" />
+                    </div>
+                    <div class="card-context">
+                        <h2>Tokyo Revengers</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Saepe atque tenetur pariatur itaque
+                            repudiandae. Nam, saepe ex nihil eius corrupti quo
+                            itaque impedit odit aspernatur accusamus? At ipsa
+                            veritatis eligendi.
+                        </p>
+                        <h3>Ongoing</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="brand">
+                <div class="img-container">
+                    <img src="/assets/brand/favicon.png" alt="Brand" />
+                </div>
+                <h2>Weeb Web</h2>
+            </div>
+            <span>All rights &copy; reserved, Weeb Web 2023.</span>
+            <p>
+                <a href="/src/html/anime.html#content">Anime</a> |
+                <a href="/index.html#about">About Us</a> |
+                <a href="/src/html/manga.html#content">Manga</a>
+            </p>
+        </footer>
+
+        <div id="blur-screen" class="hidden"></div>
+        <div id="authentication-model" class="hidden">
+            <div class="state-toggler">
+                <button id="state-login" class="state focus-state">
+                    LOGIN
+                </button>
+                <button id="state-signup" class="state">SIGN UP</button>
+            </div>
+
+            <div class="svg-container">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100"
+                    height="100"
+                    fill="currentColor"
+                    class="bi bi-person"
+                    viewBox="0 0 16 16"
+                    id="IconChangeColor">
+                    <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+                        id="mainIconPathAttribute"></path>
+                </svg>
+            </div>
+
+            <form>
+                <div>
+                    <label for="username" class="input-label">Username:</label>
+                    <input
+                        type="text"
+                        name="username"
+                        maxlength="8"
+                        id="username"
+                        placeholder="User123"
+                        class="input" />
+                </div>
+                <div>
+                    <label for="password" class="input-label">Password:</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Pass123"
+                        class="input" />
+                </div>
+                <a href="/src/html/not-available.html">forgot password? </a>
+                <button type="submit" id="submit-btn">Login</button>
+            </form>
+        </div>
+    </body>
+</html>

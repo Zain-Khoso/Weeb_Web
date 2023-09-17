@@ -1,0 +1,138 @@
+@media screen and (max-width: $breakpoint-tablet) {
+    body {
+        header {
+            nav {
+                height: 60px;
+                padding: 5px;
+
+                > .nav-brand {
+                    gap: 3px;
+
+                    > .nav-brand-img-container {
+                        width: 40px;
+                    }
+
+                    > a {
+                        font-size: x-large;
+                    }
+                }
+
+                > .navigation {
+                    gap: 10px;
+
+                    > li > a {
+                        font-size: large;
+                    }
+
+                    > li > button {
+                        font-size: large;
+                        padding: 5px 15px;
+                    }
+                }
+            }
+
+            .carousel {
+                height: 60vh;
+
+                .control {
+                    font-size: x-large;
+                    padding: 0px 5px;
+
+                    top: 40%;
+                }
+                .prev {
+                    left: 10px;
+                }
+                .next {
+                    right: 10px;
+                }
+
+                .slides {
+                    .slide {
+                        > img {
+                            object-fit: cover;
+                            object-position: center;
+                        }
+
+                        .slide-context {
+                            padding: 10px;
+
+                            h1 {
+                                font-size: larger;
+                                margin-top: -10px;
+                            }
+
+                            p {
+                                font-size: x-small;
+                                margin-top: -5px;
+                            }
+
+                            a {
+                                font-size: x-small;
+                                padding: 3px 10px;
+
+                                margin-top: 5px;
+                                margin-inline-end: 10px;
+                            }
+                        }
+                    }
+
+                    .active {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        main {
+            > h1 {
+                font-size: x-large;
+            }
+
+            section {
+                .card {
+                    height: 300px;
+                    .card-context {
+                        h2 {
+                            font-size: large;
+                        }
+
+                        p {
+                            font-size: small;
+                        }
+
+                        h3 {
+                            font-size: large;
+                        }
+                    }
+                }
+            }
+        }
+
+        footer {
+            height: 150px;
+
+            .brand {
+                gap: 10px;
+
+                .img-container {
+                    width: 50px;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+            }
+
+            span {
+                font-size: medium;
+            }
+
+            p {
+                a {
+                    font-size: medium;
+                }
+            }
+        }
+    }
+}

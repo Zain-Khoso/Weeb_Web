@@ -1,0 +1,107 @@
+@import "config";
+@import "utils";
+
+body {
+    width: 100vw;
+    background-color: $color-secondary;
+
+    header {
+        width: 100vw;
+        max-width: 1440px;
+        height: 100vh;
+        min-height: 600px;
+        max-height: 800px;
+        background-color: $color-primary;
+        padding: 0px 5vw;
+        border-bottom-right-radius: 50%;
+        margin: 0px auto;
+        overflow: hidden;
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+
+        @import "navbar";
+
+        @import "home-hero";
+    }
+
+    main {
+        width: 100vw;
+        margin: 10px 0px;
+
+        @import "home-services";
+
+        @import "home-testimonials";
+
+        @import "home-about";
+    }
+
+    footer {
+        width: 100vw;
+        max-width: 1440px;
+        height: 200px;
+        background-color: $color-primary;
+        margin: 0px auto;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+
+        .brand {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            .img-container {
+                width: 70px;
+                background-color: $color-secondary;
+                padding: 5px;
+                border-radius: 50%;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h2 {
+                font-size: 2rem;
+                font-family: $font-subheading;
+            }
+        }
+
+        span {
+            font-size: larger;
+            font-family: $font-text;
+        }
+
+        p {
+            font-size: large;
+            font-family: $font-text;
+            margin-bottom: 10px;
+
+            a {
+                font-size: 1.3rem;
+                font-family: $font-text;
+                color: $color-secondary;
+            }
+
+            a:hover {
+                cursor: pointer;
+                font-weight: 700;
+            }
+        }
+    }
+
+    @import "authentication-model";
+}
+
+// Responsiveness
+@import "home-tablet";
+@import "home-mobile";

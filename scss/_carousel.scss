@@ -1,0 +1,98 @@
+.carousel {
+    width: 100%;
+    max-width: 1440px;
+    height: 100vh;
+    overflow: hidden;
+
+    position: relative;
+
+    .control {
+        font-size: xx-large;
+        font-family: $font-text;
+        background-color: rgba($color-secondary, 0.6);
+        color: rgba($color-heading, 0.6);
+        padding: 0px 10px;
+        z-index: 2;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .control:hover,
+    .control:focus {
+        background-color: rgba($color-secondary, 0.8);
+        color: rgba($color-heading, 0.8);
+        outline: 1px solid $color-secondary;
+    }
+    .prev {
+        left: 20px;
+    }
+    .next {
+        right: 20px;
+    }
+
+    .slides {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        position: relative;
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+
+            > img {
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .slide-context {
+                width: 100%;
+                height: 40%;
+                max-height: 200px;
+                background-color: rgba($color-secondary, $alpha: 0.5);
+                padding: 10px 20px;
+                z-index: 1;
+
+                position: absolute;
+                bottom: 0px;
+
+                h1 {
+                    font-size: xx-large;
+                    font-family: $font-heading;
+                    color: $color-heading;
+                }
+
+                p {
+                    font-size: medium;
+                    font-family: $font-text;
+                }
+
+                a {
+                    @include btn-secondary;
+
+                    font-size: large;
+                    padding: 5px 15px;
+
+                    display: inline-block;
+                    margin-top: 20px;
+                    margin-inline-end: 10px;
+                }
+
+                a:hover {
+                    @include btn-secondary-hover;
+                }
+            }
+        }
+
+        .active {
+            opacity: 1;
+        }
+    }
+}

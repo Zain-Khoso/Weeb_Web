@@ -1,0 +1,156 @@
+@media screen and (max-width: $breakpoint-tablet) {
+    body {
+        header {
+            max-width: 100vw;
+            height: 100vh;
+            padding: 0px 10px;
+            border-radius: 0px;
+
+            nav {
+                height: 60px;
+                padding: 0px;
+
+                .nav-brand {
+                    gap: 3px;
+
+                    .nav-brand-img-container {
+                        width: 40px;
+                    }
+
+                    a {
+                        font-size: xx-large;
+                    }
+                }
+
+                .navigation {
+                    gap: 10px;
+
+                    a {
+                        font-size: large;
+                    }
+
+                    button {
+                        font-size: large;
+                        padding: 5px 15px;
+                    }
+                }
+            }
+
+            section {
+                align-items: center;
+
+                .hero-info {
+                    width: 80%;
+                    height: 40%;
+                }
+
+                .hero-img {
+                    display: none;
+                }
+            }
+        }
+
+        main {
+            .services {
+                .service-card {
+                    width: 95%;
+                    gap: 5px;
+
+                    .service-img {
+                        width: 150px;
+                        border-width: 2px;
+                    }
+
+                    .service-context {
+                        padding: 10px;
+                        justify-content: space-evenly;
+
+                        h1 {
+                            font-size: larger;
+                        }
+
+                        p {
+                            font-size: small;
+                        }
+
+                        a {
+                            font-size: large;
+                            padding: 5px 15px;
+                        }
+                    }
+                }
+            }
+
+            .testimonials {
+                width: 100vw;
+                height: 450px;
+
+                > h1 {
+                    font-size: xx-large;
+                    margin: 5px;
+                }
+
+                > .container {
+                    width: 90%;
+                    overflow-x: scroll;
+                    gap: 5px;
+                    justify-content: flex-start;
+                }
+            }
+
+            .about {
+                height: 250px;
+                margin-bottom: 1em;
+
+                .about-img-container {
+                    width: 40%;
+                    max-width: 200px;
+                }
+
+                .about-context {
+                    width: fit-content;
+                    margin: 0px auto;
+                    align-items: flex-start;
+
+                    h1 {
+                        font-size: xx-large;
+                    }
+
+                    p {
+                        width: 100%;
+                        max-width: 300px;
+                        font-size: x-small;
+                        margin-top: -10px;
+                        margin-left: 0px;
+                    }
+                }
+            }
+        }
+
+        footer {
+            height: 150px;
+
+            .brand {
+                gap: 10px;
+
+                .img-container {
+                    width: 50px;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+            }
+
+            span {
+                font-size: medium;
+            }
+
+            p {
+                a {
+                    font-size: medium;
+                }
+            }
+        }
+    }
+}

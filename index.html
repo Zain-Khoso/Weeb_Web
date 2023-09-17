@@ -2,63 +2,272 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=Overlock:wght@400;700&family=Roboto:wght@300&display=swap"
+            rel="stylesheet" />
+
+        <!-- Favicon -->
         <link
             rel="shortcut icon"
-            href="/assets/imgs/favicon.png"
+            href="/assets/brand/favicon.png"
             type="image/x-icon" />
-        <link rel="stylesheet" href="/code/home/style.css"/>
-        <script defer src="/code/home/script.js"></script>
-        <title>Weeb Web</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/src/css/default.css" />
+        <link rel="stylesheet" href="/src/css/index.css" />
+
+        <!-- JS -->
+        <script defer src="/src/js/authentication.js"></script>
+        <script defer src="/src/js/carousel.js"></script>
+
+        <title>Home | Weeb Web</title>
     </head>
     <body>
         <header>
-            <img src="/assets/imgs/logo.png" alt="Logo" />
-            <h1>Home</h1>
-            <button id="sidebarbtn">
-                <div class="design"></div>
-                <div class="design"></div>
-                <div class="design"></div>
-            </button>
+            <nav>
+                <div class="nav-brand">
+                    <div class="nav-brand-img-container">
+                        <img src="/assets/brand/favicon.png" alt="Logo" />
+                    </div>
+                    <a href="/index.html">Weeb Web</a>
+                </div>
+
+                <ul class="navigation">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Content</a></li>
+                    <li><button id="auth-model-toggler">LOGIN</button></li>
+                </ul>
+            </nav>
+
+            <!-- Hero -->
+            <section>
+                <div class="hero-info">
+                    <h1>Download Unlimited Anime & Manga</h1>
+
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Nisi minus asperiores nam animi repellat, odio
+                        ullam voluptas quia vero culpa.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#services" class="hero-btn">Content</a>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <img src="/assets/brand/hero.png" alt="Hero" />
+                </div>
+            </section>
         </header>
 
-        <div id="sidebar">
-            <button class="navbtns">Home</button>
-            <button class="navbtns">Anime</button>
-            <button class="navbtns">Manga</button>
-            <button class="navbtns">About-Us</button>
-            <button class="navbtns">Sign-up</button>
-        </div>
-
         <main>
-            <section>
-                <h1>What is this?</h1>
-                <h3>This Site is a Web of Weebs.</h3>
+            <!-- Services Section -->
+            <section id="services" class="services">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img
+                            src="/assets/brand/manga-sample.png"
+                            alt="Manga Photo" />
+                    </div>
+                    <div class="service-context">
+                        <h1>Manga</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Perferendis non, odit cupiditate iusto numquam
+                            impedit alias porro ullam blanditiis minima pariatur
+                            explicabo et dicta sint suscipit harum id culpa
+                            neque.
+                        </p>
+                        <a
+                            href="/src/html/manga.html#content"
+                            class="useless-btn"
+                            >View The Content</a
+                        >
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img
+                            src="/assets/brand/anime-sample.png"
+                            alt="Anime Photo" />
+                    </div>
+                    <div class="service-context">
+                        <h1>Anime</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Blanditiis odit voluptatum fuga eos libero
+                            maiores nobis modi animi sint porro, aperiam cumque
+                            illum exercitationem tempore recusandae iure sequi
+                            obcaecati quo.
+                        </p>
+                        <a
+                            href="/src/html/anime.html#content"
+                            class="useless-btn"
+                            >View The Content</a
+                        >
+                    </div>
+                </div>
             </section>
 
-            <section>
-                <h1>Who is a Weeb?</h1>
-                <h3>
-                    A weeb is a derisive term for a non-Japanese person who is
-                    so obsessed with Japanese culture that they wish they were
-                    actually Japanese.
-                </h3>
+            <!-- testimonials Section -->
+            <section class="testimonials">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path
+                        fill="#7168ea"
+                        fill-opacity="1"
+                        d="M0,160L30,160C60,160,120,160,180,181.3C240,203,300,245,360,256C420,267,480,245,540,250.7C600,256,660,288,720,304C780,320,840,320,900,288C960,256,1020,192,1080,186.7C1140,181,1200,235,1260,234.7C1320,235,1380,181,1410,154.7L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+                </svg>
+                <h1>User Reviews</h1>
+                <div class="container">
+                    <div class="testimonial">
+                        <div class="testimonial-img">
+                            <div class="img-container">
+                                <img
+                                    src="/assets/testimonials/testimonial-img-1.jpg"
+                                    alt="Testimonial 1" />
+                            </div>
+                        </div>
+                        <div class="testimonial-context">
+                            <h2>Trevor</h2>
+                            <p>
+                                &quot; Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Velit ad eligendi repellendus
+                                laborum soluta. Iste hic voluptates
+                                reprehenderit dicta repudiandae, ipsam, labore
+                                explicabo veritatis odio eveniet temporibus
+                                deleniti blanditiis maxime? &quot;
+                            </p>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-img">
+                            <div class="img-container">
+                                <img
+                                    src="/assets/testimonials/testimonial-img-2.jpg"
+                                    alt="Testmonial 2" />
+                            </div>
+                        </div>
+                        <div class="testimonial-context">
+                            <h2>Michael</h2>
+                            <p>
+                                &quot; Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Velit ad eligendi repellendus
+                                laborum soluta. Iste hic voluptates
+                                reprehenderit dicta repudiandae, ipsam, labore
+                                explicabo veritatis odio eveniet temporibus
+                                deleniti blanditiis maxime? &quot;
+                            </p>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-img">
+                            <div class="img-container">
+                                <img
+                                    src="/assets/testimonials/testimonial-img-3.jpg"
+                                    alt="Testimonial 3" />
+                            </div>
+                        </div>
+                        <div class="testimonial-context">
+                            <h2>Franklin</h2>
+                            <p>
+                                &quot; Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Velit ad eligendi repellendus
+                                laborum soluta. Iste hic voluptates
+                                reprehenderit dicta repudiandae, ipsam, labore
+                                explicabo veritatis odio eveniet temporibus
+                                deleniti blanditiis maxime? &quot;
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <section>
-                <h1>More Down Blow</h1>
-                <h3>
-                    On this site you'll find, Where to Watch Anime, Where to
-                    Read Manga, Memes(about Anime & Manga), More Weebs like your
-                    self, Anime & Manga Discussions, Anime & Manga Suggestions.
-                    And Much More. May you have a good time with us. Find more
-                    about
-                    <button class="navbtns"><i>Anime</i></button> and
-                    <button class="navbtns"><i>Manga</i></button>.
-                </h3>
+            <!-- About Section -->
+            <section id="about" class="about">
+                <div class="about-context">
+                    <h1>About Us</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Laborum alias excepturi aliquid eos, voluptate eius,
+                        quam omnis, ducimus rerum ipsam vero! Iusto deleniti
+                        eaque aperiam, sapiente pariatur natus repellat,
+                        voluptas reiciendis eligendi consequuntur sint. Adipisci
+                        pariatur in culpa, asperiores temporibus dolor. Eius in
+                        magni optio assumenda amet illo a quis!
+                    </p>
+                </div>
+                <div class="about-img-container">
+                    <img src="/assets/brand/about-us.png" alt="" />
+                </div>
             </section>
         </main>
+
+        <footer>
+            <div class="brand">
+                <div class="img-container">
+                    <img src="/assets/brand/favicon.png" alt="Brand" />
+                </div>
+                <h2>Weeb Web</h2>
+            </div>
+            <span>All rights &copy; reserved, Weeb Web 2023.</span>
+            <p>
+                <a href="/src/html/anime.html#content">Anime</a> |
+                <a href="#about">About Us</a> |
+                <a href="/src/html/manga.html#content">Manga</a>
+            </p>
+        </footer>
+
+        <div id="blur-screen" class="hidden"></div>
+        <div id="authentication-model" class="hidden">
+            <div class="state-toggler">
+                <button id="state-login" class="state focus-state">
+                    LOGIN
+                </button>
+                <button id="state-signup" class="state">SIGN UP</button>
+            </div>
+
+            <div class="svg-container">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100"
+                    height="100"
+                    fill="currentColor"
+                    class="bi bi-person"
+                    viewBox="0 0 16 16"
+                    id="IconChangeColor">
+                    <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+                        id="mainIconPathAttribute"></path>
+                </svg>
+            </div>
+
+            <form>
+                <div>
+                    <label for="username" class="input-label">Username:</label>
+                    <input
+                        type="text"
+                        name="username"
+                        maxlength="8"
+                        id="username"
+                        placeholder="User123"
+                        class="input" />
+                </div>
+                <div>
+                    <label for="password" class="input-label">Password:</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Pass123"
+                        class="input" />
+                </div>
+                <a href="#">forgot password? </a>
+                <button type="submit" id="submit-btn">Login</button>
+            </form>
+        </div>
     </body>
 </html>
