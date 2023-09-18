@@ -1,7 +1,5 @@
 # Weeb Web
 
-![Weeb Web Logo](https://weeb-web-zain.netlify.app/)
-
 ## Overview
 
 Weeb Web is a delightful front-end web project tailored for anime and manga enthusiasts. This vibrant and user-friendly website features a captivating homepage along with two dedicated pages, one for anime aficionados and the other for manga enthusiasts.
