@@ -680,9 +680,11 @@ body #authentication-model form button:hover {
   body main .services .service-card {
     width: 100%;
     height: 150px;
-    gap: 5px;
+    padding: 0px 5px;
+    gap: 8px;
   }
   body main .services .service-card .service-img {
+    display: none;
     width: 70px;
   }
   body main .services .service-card .service-context {
@@ -692,11 +694,13 @@ body #authentication-model form button:hover {
     font-size: larger;
   }
   body main .services .service-card .service-context p {
-    font-size: xx-small;
+    padding-left: 0px;
+    font-size: small;
   }
   body main .services .service-card .service-context a {
-    font-size: small;
+    font-size: x-small;
     padding: 5px;
+    overflow: hidden;
   }
   body main .testimonials > h1 {
     font-size: x-large;
@@ -711,16 +715,29 @@ body #authentication-model form button:hover {
   }
   body main .about .about-img-container {
     width: 40%;
+    max-height: 150px;
+    position: absolute;
+    right: 0px;
+    overflow: hidden;
   }
   body main .about .about-context {
-    margin-left: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(1px);
+    padding-left: 10px;
+    margin-left: 0px;
+    z-index: 2;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
   body main .about .about-context h1 {
     font-size: large;
   }
   body main .about .about-context p {
-    font-size: 8px;
-    margin-top: -5px;
+    font-size: 10px;
+    margin-top: 0px;
   }
   body footer {
     height: 100px;
